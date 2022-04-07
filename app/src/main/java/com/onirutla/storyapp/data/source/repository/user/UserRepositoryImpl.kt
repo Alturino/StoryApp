@@ -6,8 +6,9 @@ import com.onirutla.storyapp.data.model.user.body.UserLoginBody
 import com.onirutla.storyapp.data.model.user.body.UserRegisterBody
 import com.onirutla.storyapp.data.model.user.response.LoginResponse
 import com.onirutla.storyapp.data.source.api_service.UserApiService
+import javax.inject.Inject
 
-class UserRepositoryImpl(
+class UserRepositoryImpl @Inject constructor(
     private val userApiService: UserApiService
 ) : UserRepository {
 
