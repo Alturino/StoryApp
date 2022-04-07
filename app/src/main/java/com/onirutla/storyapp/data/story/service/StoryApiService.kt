@@ -4,6 +4,7 @@ import com.onirutla.storyapp.data.BaseResponse
 import com.onirutla.storyapp.data.PageResponse
 import com.onirutla.storyapp.data.story.response.StoryResponse
 import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.Response
 import retrofit2.http.*
 
@@ -19,6 +20,7 @@ interface StoryApiService {
     @Multipart
     @POST(value = "/stories")
     suspend fun addNewStoryWithToken(
+        @Part description: RequestBody,
         @Part photo: MultipartBody.Part,
         @Header("Authorization") token: String
     ): Response<BaseResponse>
@@ -26,6 +28,7 @@ interface StoryApiService {
     @Multipart
     @POST(value = "/stories")
     suspend fun addNewStoryWithoutToken(
+        @Part description: RequestBody,
         @Part photo: MultipartBody.Part
     ): Response<BaseResponse>
 
