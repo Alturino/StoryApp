@@ -1,4 +1,4 @@
-package com.onirutla.storyapp.data
+package com.onirutla.storyapp.data.model
 
 
 import com.squareup.moshi.Json

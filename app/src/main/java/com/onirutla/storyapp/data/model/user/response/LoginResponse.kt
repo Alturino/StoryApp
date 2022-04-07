@@ -1,4 +1,4 @@
-package com.onirutla.storyapp.data.user.response
+package com.onirutla.storyapp.data.model.user.response
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass

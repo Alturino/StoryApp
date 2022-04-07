@@ -1,8 +1,9 @@
-package com.onirutla.storyapp.data.story.response
-
+package com.onirutla.storyapp.data.model.story
 
 import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
+@JsonClass(generateAdapter = true)
 data class StoryResponse(
     @Json(name = "createdAt")
     val createdAt: String? = "",
