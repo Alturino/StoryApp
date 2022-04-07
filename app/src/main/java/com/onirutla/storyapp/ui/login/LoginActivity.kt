@@ -1,9 +1,9 @@
-package com.onirutla.storyapp
+package com.onirutla.storyapp.ui.login
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
-import com.onirutla.storyapp.custom_component.isValidEmail
+import com.onirutla.storyapp.util.isValidEmail
 import com.onirutla.storyapp.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {

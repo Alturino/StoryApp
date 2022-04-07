@@ -1,4 +1,4 @@
-package com.onirutla.storyapp.custom_component
+package com.onirutla.storyapp.util
 
 import android.util.Patterns
 
