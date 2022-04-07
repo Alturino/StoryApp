@@ -20,7 +20,7 @@ interface StoryApiService {
     @Multipart
     @POST(value = "/stories")
     suspend fun addNewStoryWithToken(
-        @Part description: RequestBody,
+        @PartMap requestsBody: Map<String, RequestBody>,
         @Part photo: MultipartBody.Part,
         @Header("Authorization") token: String
     ): Response<BaseResponse>
@@ -28,7 +28,7 @@ interface StoryApiService {
     @Multipart
     @POST(value = "/stories")
     suspend fun addNewStoryWithoutToken(
-        @Part description: RequestBody,
+        @PartMap requestsBody: Map<String, RequestBody>,
         @Part photo: MultipartBody.Part
     ): Response<BaseResponse>
 
