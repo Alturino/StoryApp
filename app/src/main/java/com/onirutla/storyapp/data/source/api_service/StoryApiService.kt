@@ -1,8 +1,8 @@
-package com.onirutla.storyapp.data.story.service
+package com.onirutla.storyapp.data.source.api_service
 
-import com.onirutla.storyapp.data.BaseResponse
-import com.onirutla.storyapp.data.PageResponse
-import com.onirutla.storyapp.data.story.response.StoryResponse
+import com.onirutla.storyapp.data.model.BaseResponse
+import com.onirutla.storyapp.data.model.PageResponse
+import com.onirutla.storyapp.data.model.story.StoryResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Response
