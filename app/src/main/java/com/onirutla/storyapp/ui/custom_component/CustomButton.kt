@@ -1,4 +1,4 @@
-package com.onirutla.storyapp.custom_component
+package com.onirutla.storyapp.ui.custom_component
 
 import android.content.Context
 import android.graphics.Canvas

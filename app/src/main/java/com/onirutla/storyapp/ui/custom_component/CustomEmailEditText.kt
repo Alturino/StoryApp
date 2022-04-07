@@ -1,4 +1,4 @@
-package com.onirutla.storyapp.custom_component
+package com.onirutla.storyapp.ui.custom_component
 
 import android.content.Context
 import android.graphics.Canvas
@@ -6,8 +6,9 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatEditText
+import com.onirutla.storyapp.util.isValidEmail
 
-class CustomPasswordEditText : AppCompatEditText {
+class CustomEmailEditText : AppCompatEditText {
 
     constructor(context: Context) : super(context) {
         init()
@@ -31,14 +32,13 @@ class CustomPasswordEditText : AppCompatEditText {
 
             }
 
-            override fun onTextChanged(s: CharSequence, p1: Int, p2: Int, p3: Int) {
+            override fun onTextChanged(p0: CharSequence, p1: Int, p2: Int, p3: Int) {
 
             }
 
             override fun afterTextChanged(e: Editable) {
-                if (e.length < 6) error = "Minimal 6 karakter"
+                if (!e.toString().isValidEmail()) error = "Bukan Valid email Address"
             }
-
         })
 
     }
