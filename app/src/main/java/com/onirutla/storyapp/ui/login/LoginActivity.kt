@@ -25,7 +25,7 @@ class LoginActivity : AppCompatActivity() {
         val password = binding.password.text
         val email = binding.email.text
         val buttonShouldEnabled = (password.toString()
-            .isNotEmpty() && password.toString().length > 6) && (email.toString()
+            .isNotEmpty() && password.toString().length >= 6) && (email.toString()
             .isNotEmpty() && email.toString().isValidEmail())
         binding.button.isEnabled = buttonShouldEnabled
     }
