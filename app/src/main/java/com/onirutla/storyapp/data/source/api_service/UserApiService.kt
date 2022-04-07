@@ -1,8 +1,9 @@
 package com.onirutla.storyapp.data.source.api_service
 
+import com.onirutla.storyapp.data.model.BaseResponse
 import com.onirutla.storyapp.data.model.user.body.UserLoginBody
 import com.onirutla.storyapp.data.model.user.body.UserRegisterBody
-import com.onirutla.storyapp.data.model.user.response.UserResponse
+import com.onirutla.storyapp.data.model.user.response.LoginResponse
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.POST
@@ -10,9 +11,9 @@ import retrofit2.http.POST
 interface UserApiService {
 
     @POST(value = "/register")
-    suspend fun registerUser(@Body registerBody: UserRegisterBody): Response<UserRegisterBody>
+    suspend fun registerUser(@Body registerBody: UserRegisterBody): Response<BaseResponse>
 
     @POST(value = "/login")
-    suspend fun loginUser(@Body loginBody: UserLoginBody): Response<UserResponse>
+    suspend fun loginUser(@Body loginBody: UserLoginBody): Response<LoginResponse>
 
 }
