@@ -4,6 +4,7 @@ import com.onirutla.storyapp.data.model.BaseResponse
 import com.onirutla.storyapp.data.model.user.body.UserLoginBody
 import com.onirutla.storyapp.data.model.user.body.UserRegisterBody
 import com.onirutla.storyapp.data.model.user.response.LoginResponse
+import kotlinx.coroutines.flow.Flow
 import retrofit2.Response
 
 interface UserRepository {
@@ -11,4 +12,6 @@ interface UserRepository {
     suspend fun registerUser(registerBody: UserRegisterBody): BaseResponse
 
     suspend fun loginUser(loginBody: UserLoginBody): LoginResponse
+
+    val userToken: Flow<String>
 }
