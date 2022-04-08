@@ -37,7 +37,11 @@ class StoryRepositoryImpl @Inject constructor(
             compressedImage.name,
             imageRequestBody
         )
-        val response = storyApiService.addNewStoryWithToken(mapOfRequestBody, imageMultiPart, token)
+        val response = storyApiService.addNewStoryWithToken(
+            mapOfRequestBody,
+            imageMultiPart,
+            "Bearer $token"
+        )
         if (response.isSuccessful) {
             Log.d("addStoryWithToken", "${response.body()}")
             response.body()!!
@@ -50,38 +54,13 @@ class StoryRepositoryImpl @Inject constructor(
         BaseResponse()
     }
 
-    override suspend fun addNewStoryWithoutToken(
-        image: File
-    ): BaseResponse = try {
-        val compressedImage = image.compressImage()
-        val mapOfRequestBody = mutableMapOf<String, RequestBody>().apply {
-            put("description", compressedImage.name.toRequestBody("text/plain".toMediaTypeOrNull()))
-        }
-        val imageRequestBody = compressedImage.asRequestBody("image/jpeg".toMediaTypeOrNull())
-        val imageMultiPart = MultipartBody.Part.createFormData(
-            "photo",
-            compressedImage.name,
-            imageRequestBody
-        )
-        val response = storyApiService.addNewStoryWithoutToken(mapOfRequestBody, imageMultiPart)
-        if (response.isSuccessful) {
-            Log.d("addStoryWithoutToken", "${response.body()}")
-            response.body()!!
-        } else {
-            Log.d("addStoryWithoutToken", "${response.errorBody()}")
-            BaseResponse()
-        }
-    } catch (e: Exception) {
-        Log.d("addStoryWithoutToken", "$e", e)
-        BaseResponse()
-    }
-
-    override fun getAllStoriesWithToken(
-        page: Int,
-        size: Int,
-        token: String
-    ): Flow<PagingData<StoryResponse>> = Pager(
+    override fun getAllStoriesWithToken(token: String): Flow<PagingData<StoryResponse>> = Pager(
         config = PagingConfig(pageSize = NETWORK_LOAD_SIZE, enablePlaceholders = false),
-        pagingSourceFactory = { StoryPagingDataSource(apiService = storyApiService, token = token) }
+        pagingSourceFactory = {
+            StoryPagingDataSource(
+                apiService = storyApiService,
+                token = "Bearer $token"
+            )
+        }
     ).flow
 }

@@ -9,7 +9,5 @@ import java.io.File
 interface StoryRepository {
     suspend fun addNewStoryWithToken(image: File, token: String): BaseResponse
 
-    suspend fun addNewStoryWithoutToken(image: File): BaseResponse
-
-    fun getAllStoriesWithToken(page: Int, size: Int, token: String): Flow<PagingData<StoryResponse>>
+    fun getAllStoriesWithToken(token: String): Flow<PagingData<StoryResponse>>
 }
