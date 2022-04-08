@@ -1,13 +1,17 @@
 package com.onirutla.storyapp.ui.story
 
+import android.content.Intent
 import android.os.Bundle
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.onirutla.storyapp.data.model.BaseResponse
 import com.onirutla.storyapp.databinding.ActivityStoryBinding
+import com.onirutla.storyapp.ui.add_story.AddStoryActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.collect
@@ -22,6 +26,14 @@ class StoryActivity : AppCompatActivity() {
     private val viewModel: StoryViewModel by viewModels()
 
     private val storyAdapter: StoryAdapter by lazy { StoryAdapter() }
+    private var response: BaseResponse? = null
+
+    private val launcherAddStory =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            if (it.resultCode == RESULT_OK) {
+                response = it.data?.getParcelableExtra("response")
+            }
+        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,11 +41,18 @@ class StoryActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         lifecycleScope.launch {
-            lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
+            lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
+                if (response != null && response?.error == false) {
+                    viewModel.getNewestStory()
+                }
                 viewModel.stories.collect {
                     storyAdapter.submitData(it)
                 }
             }
+        }
+
+        binding.addStoryButton.setOnClickListener {
+            startAddActivity()
         }
 
         binding.storyList.apply {
@@ -42,4 +61,10 @@ class StoryActivity : AppCompatActivity() {
             setHasFixedSize(true)
         }
     }
+
+    private fun startAddActivity() {
+        val intent = Intent(this, AddStoryActivity::class.java)
+        launcherAddStory.launch(intent)
+    }
+
 }
