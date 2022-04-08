@@ -3,6 +3,9 @@ package com.onirutla.storyapp.util
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.util.Patterns
+import android.widget.ImageView
+import androidx.databinding.BindingAdapter
+import com.bumptech.glide.Glide
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
@@ -23,4 +26,9 @@ fun File.compressImage(): File {
 
     bitmap.compress(Bitmap.CompressFormat.JPEG, compressQuality, FileOutputStream(this))
     return this
+}
+
+@BindingAdapter("load_image")
+fun loadImage(view: ImageView, any: Any?) {
+    any?.let { Glide.with(view).load(it).into(view) }
 }
