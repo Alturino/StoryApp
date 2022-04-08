@@ -1,9 +1,6 @@
 package com.onirutla.storyapp.ui.login
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.onirutla.storyapp.data.model.user.body.UserLoginBody
 import com.onirutla.storyapp.data.model.user.response.LoginResponse
 import com.onirutla.storyapp.data.source.repository.user.UserRepository
@@ -18,6 +15,8 @@ class LoginViewModel @Inject constructor(
 
     val loginResponse: LiveData<LoginResponse> get() = _loginResponse
     private val _loginResponse = MutableLiveData<LoginResponse>()
+
+    val loginToken = userRepository.userToken.asLiveData(viewModelScope.coroutineContext)
 
     fun login(userLoginBody: UserLoginBody) {
         viewModelScope.launch {
