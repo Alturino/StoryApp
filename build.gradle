@@ -9,6 +9,7 @@ buildscript {
         lifecycle_version = "2.4.1"
         hilt_version = "2.41"
         paging_version = "3.1.1"
+        datastore_version = "1.0.0"
     }
 
     dependencies {
