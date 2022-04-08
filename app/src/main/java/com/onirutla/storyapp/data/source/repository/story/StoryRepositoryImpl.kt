@@ -13,9 +13,7 @@ import com.onirutla.storyapp.util.compressImage
 import kotlinx.coroutines.flow.Flow
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
-import okhttp3.RequestBody
 import okhttp3.RequestBody.Companion.asRequestBody
-import okhttp3.RequestBody.Companion.toRequestBody
 import java.io.File
 import javax.inject.Inject
 
@@ -24,13 +22,12 @@ class StoryRepositoryImpl @Inject constructor(
 ) : StoryRepository {
 
     override suspend fun addNewStoryWithToken(
+        description: String,
         image: File,
         token: String
     ): BaseResponse = try {
         val compressedImage = image.compressImage()
-        val mapOfRequestBody = mutableMapOf<String, RequestBody>().apply {
-            put("description", compressedImage.name.toRequestBody("text/plain".toMediaTypeOrNull()))
-        }
+        val descriptionMultipart = MultipartBody.Part.createFormData("description", description)
         val imageRequestBody = compressedImage.asRequestBody("image/jpeg".toMediaTypeOrNull())
         val imageMultiPart = MultipartBody.Part.createFormData(
             "photo",
@@ -38,7 +35,7 @@ class StoryRepositoryImpl @Inject constructor(
             imageRequestBody
         )
         val response = storyApiService.addNewStoryWithToken(
-            mapOfRequestBody,
+            descriptionMultipart,
             imageMultiPart,
             "Bearer $token"
         )

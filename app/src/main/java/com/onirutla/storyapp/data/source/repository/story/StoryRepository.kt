@@ -7,7 +7,8 @@ import kotlinx.coroutines.flow.Flow
 import java.io.File
 
 interface StoryRepository {
-    suspend fun addNewStoryWithToken(image: File, token: String): BaseResponse
+
+    suspend fun addNewStoryWithToken(description: String, image: File, token: String): BaseResponse
 
     fun getAllStoriesWithToken(token: String): Flow<PagingData<StoryResponse>>
 }
