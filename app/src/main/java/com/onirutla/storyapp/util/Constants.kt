@@ -8,4 +8,5 @@ object Constants {
     const val BASE_URL = BuildConfig.BASE_URL
     const val LOGIN_DATASTORE = BuildConfig.LOGIN_DATASTORE
     const val LOGIN_TOKEN = BuildConfig.LOGIN_TOKEN
+    const val FILENAME_FORMAT = "dd-MMM-yyyy"
 }
