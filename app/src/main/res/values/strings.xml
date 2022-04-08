@@ -5,4 +5,6 @@
     <string name="description">Description</string>
     <string name="gallery">Gallery</string>
     <string name="camera">Camera</string>
+    <string name="upload">Upload</string>
+    <string name="add_story">Add Story</string>
 </resources>
