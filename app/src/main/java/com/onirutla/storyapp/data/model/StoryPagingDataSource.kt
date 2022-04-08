@@ -1,5 +1,6 @@
 package com.onirutla.storyapp.data.model
 
+import android.util.Log
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.onirutla.storyapp.data.model.story.StoryResponse
@@ -27,7 +28,7 @@ class StoryPagingDataSource(
             size = NETWORK_LOAD_SIZE,
             token = token
         )
-        val stories = response.body()!!.listStory
+        val stories = response.body()?.listStory
         val nextKey = if (stories.isNullOrEmpty()) null else position + 1
         LoadResult.Page(
             data = stories.orEmpty(),
