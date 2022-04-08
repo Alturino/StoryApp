@@ -21,7 +21,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="62dp"
         android:text="@string/camera"
         app:layout_constraintEnd_toStartOf="@+id/gallery_button"
         app:layout_constraintStart_toStartOf="@+id/preview_image"
@@ -44,15 +43,28 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
         android:background="@null"
         android:gravity="top"
         android:hint="@string/description"
         android:paddingHorizontal="8dp"
         android:paddingTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/upload_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/camera_button" />
+
+    <com.onirutla.storyapp.ui.custom_component.CustomButton
+        android:id="@+id/upload_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:enabled="false"
+        android:text="@string/upload"
+        android:textColor="?attr/colorOnPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/description_edit_text"
+        app:layout_constraintStart_toStartOf="@+id/description_edit_text"
+        app:layout_constraintTop_toBottomOf="@+id/description_edit_text" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
