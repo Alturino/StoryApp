@@ -3,36 +3,65 @@ package com.onirutla.storyapp.ui.login
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
+import com.onirutla.storyapp.data.model.BaseResponse
 import com.onirutla.storyapp.data.model.user.body.UserLoginBody
 import com.onirutla.storyapp.databinding.ActivityLoginBinding
+import com.onirutla.storyapp.ui.register.RegisterActivity
 import com.onirutla.storyapp.ui.story.StoryActivity
+import com.onirutla.storyapp.util.Constants.REGISTER_RESPONSE
 import com.onirutla.storyapp.util.isValidEmail
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 
 @AndroidEntryPoint
+@ExperimentalCoroutinesApi
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
 
     private val viewModel: LoginViewModel by viewModels()
 
+    private val launcherRegister =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            if (it.resultCode == RESULT_OK) {
+                val response = it.data?.getParcelableExtra<BaseResponse>(REGISTER_RESPONSE)
+                Log.d("login", "$response")
+                /*Toast.makeText(this, "${response?.message}", Toast.LENGTH_SHORT).show()*/
+            }
+        }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+        setSignUp()
         observeLoginToken()
         observeLoginResponse()
         setButtonShouldEnabled()
         setButtonClickListener()
         setEditorActionListener()
+    }
+
+    private fun setSignUp() {
+        binding.signUp.setOnClickListener {
+            register()
+        }
+    }
+
+    private fun register() {
+        val intent = Intent(this, RegisterActivity::class.java)
+        launcherRegister.launch(intent)
     }
 
     private fun observeLoginResponse() {
