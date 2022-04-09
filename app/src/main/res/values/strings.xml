@@ -11,4 +11,5 @@
     <string name="sign_up">Sign up</string>
     <string name="didn_t_have_an_account">Didn\'t have an account ?</string>
     <string name="logout">Logout</string>
+    <string name="change_language">Change Language</string>
 </resources>
