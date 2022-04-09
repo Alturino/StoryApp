@@ -1,9 +1,12 @@
 package com.onirutla.storyapp.data.model.story
 
+import android.os.Parcelable
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import kotlinx.parcelize.Parcelize
 
 @JsonClass(generateAdapter = true)
+@Parcelize
 data class StoryResponse(
     @Json(name = "createdAt")
     val createdAt: String? = "",
@@ -19,4 +22,4 @@ data class StoryResponse(
     val name: String? = "",
     @Json(name = "photoUrl")
     val photoUrl: String? = ""
-)
+) : Parcelable
