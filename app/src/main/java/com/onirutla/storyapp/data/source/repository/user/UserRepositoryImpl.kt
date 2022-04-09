@@ -27,11 +27,11 @@ class UserRepositoryImpl @Inject constructor(
                 response.body()!!
             } else {
                 Log.d("userRepository", "${response.errorBody()}")
-                BaseResponse()
+                BaseResponse(error = true, response.message())
             }
         } catch (e: Exception) {
             Log.d("userRepository", "$e", e)
-            BaseResponse()
+            BaseResponse(error = true, e.localizedMessage)
         }
 
     override suspend fun loginUser(loginBody: UserLoginBody): LoginResponse = try {
