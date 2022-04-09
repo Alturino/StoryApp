@@ -10,6 +10,16 @@
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="18" />
 
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+
+            <category android:name="android.intent.category.BROWSABLE" />
+
+            <data android:scheme="https" />
+        </intent>
+    </queries>
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -18,6 +28,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.StoryApp">
+        <activity
+            android:name=".ui.register.RegisterActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.detail.DetailActivity"
             android:exported="false" />
@@ -47,13 +60,5 @@
                 android:resource="@xml/file_paths" />
         </provider>
     </application>
-
-    <queries>
-        <intent>
-            <action android:name="android.intent.action.VIEW" />
-            <category android:name="android.intent.category.BROWSABLE" />
-            <data android:scheme="https" />
-        </intent>
-    </queries>
 
 </manifest>
