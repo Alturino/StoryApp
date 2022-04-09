@@ -19,6 +19,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StoryApp">
         <activity
+            android:name=".ui.detail.DetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.add_story.AddStoryActivity"
             android:exported="false" />
         <activity
