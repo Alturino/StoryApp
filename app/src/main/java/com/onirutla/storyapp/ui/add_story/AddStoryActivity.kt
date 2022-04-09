@@ -11,6 +11,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
 import com.onirutla.storyapp.databinding.ActivityAddStoryBinding
+import com.onirutla.storyapp.util.Constants.ADD_STORY_RESPONSE
 import com.onirutla.storyapp.util.createTempFile
 import com.onirutla.storyapp.util.uriToFile
 import dagger.hilt.android.AndroidEntryPoint
@@ -69,9 +70,9 @@ class AddStoryActivity : AppCompatActivity() {
             }
         }
 
-        viewModel.response.observe(this@AddStoryActivity) {
+        viewModel.addStoryResponse.observe(this@AddStoryActivity) {
             if (it.error == false && it != null) {
-                setResult(RESULT_OK, Intent().putExtra("response", it))
+                setResult(RESULT_OK, Intent().putExtra(ADD_STORY_RESPONSE, it))
                 finishAndRemoveTask()
             }
         }
