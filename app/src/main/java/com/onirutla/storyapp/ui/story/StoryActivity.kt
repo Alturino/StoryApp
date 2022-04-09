@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.onirutla.storyapp.data.model.BaseResponse
 import com.onirutla.storyapp.databinding.ActivityStoryBinding
 import com.onirutla.storyapp.ui.add_story.AddStoryActivity
+import com.onirutla.storyapp.util.Constants.ADD_STORY_RESPONSE
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.collect
@@ -31,7 +32,7 @@ class StoryActivity : AppCompatActivity() {
     private val launcherAddStory =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             if (it.resultCode == RESULT_OK) {
-                response = it.data?.getParcelableExtra("response")
+                response = it.data?.getParcelableExtra(ADD_STORY_RESPONSE)
             }
         }
 
