@@ -16,7 +16,7 @@ import javax.inject.Inject
 @HiltViewModel
 class AddStoryViewModel @Inject constructor(
     private val storyRepository: StoryRepository,
-    private val userRepository: UserRepository
+    userRepository: UserRepository
 ) : ViewModel() {
 
     private val _image = MutableLiveData<File>()
@@ -25,7 +25,7 @@ class AddStoryViewModel @Inject constructor(
     private val token = userRepository.userToken
 
     private val _response = MutableLiveData<BaseResponse>()
-    val response: LiveData<BaseResponse> get() = _response
+    val addStoryResponse: LiveData<BaseResponse> get() = _response
 
     fun saveImage(image: File) {
         viewModelScope.launch {
