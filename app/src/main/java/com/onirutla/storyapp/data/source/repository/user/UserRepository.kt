@@ -13,5 +13,7 @@ interface UserRepository {
 
     suspend fun loginUser(loginBody: UserLoginBody): LoginResponse
 
+    suspend fun logoutUser()
+
     val userToken: Flow<String>
 }

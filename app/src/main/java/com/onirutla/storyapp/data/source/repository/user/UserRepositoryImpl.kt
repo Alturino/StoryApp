@@ -34,6 +34,10 @@ class UserRepositoryImpl @Inject constructor(
             BaseResponse(error = true, e.localizedMessage)
         }
 
+    override suspend fun logoutUser() {
+        dataStoreManager.clearUserToken()
+    }
+
     override suspend fun loginUser(loginBody: UserLoginBody): LoginResponse = try {
         val response = userApiService.loginUser(loginBody)
         if (response.isSuccessful) {
