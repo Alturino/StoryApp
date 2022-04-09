@@ -37,4 +37,10 @@ class DataStoreManager @Inject constructor(context: Context) {
         }
     }
 
+    suspend fun clearUserToken(){
+        loginDataStore.edit {
+            it.clear()
+        }
+    }
+
 }
