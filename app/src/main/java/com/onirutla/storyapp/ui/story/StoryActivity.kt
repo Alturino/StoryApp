@@ -2,6 +2,7 @@ package com.onirutla.storyapp.ui.story
 
 import android.content.Intent
 import android.os.Bundle
+import android.provider.Settings
 import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.result.contract.ActivityResultContracts
@@ -86,6 +87,9 @@ class StoryActivity : AppCompatActivity() {
                         addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
                     }
                 )
+            }
+            R.id.change_language -> {
+                startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
             }
         }
         return super.onOptionsItemSelected(item)
