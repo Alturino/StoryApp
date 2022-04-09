@@ -50,4 +50,10 @@ class StoryViewModel @Inject constructor(
             }
         }
     }
+
+    fun logout(){
+        viewModelScope.launch {
+            userRepository.logoutUser()
+        }
+    }
 }
