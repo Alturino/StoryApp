@@ -35,7 +35,7 @@ class LoginActivity : AppCompatActivity() {
             if (it.resultCode == RESULT_OK) {
                 val response = it.data?.getParcelableExtra<BaseResponse>(REGISTER_RESPONSE)
                 Log.d("login", "$response")
-                /*Toast.makeText(this, "${response?.message}", Toast.LENGTH_SHORT).show()*/
+                Toast.makeText(this, "${response?.message}", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -70,7 +70,10 @@ class LoginActivity : AppCompatActivity() {
                 when (it) {
                     true -> Toast.makeText(this, loginResponse.message, Toast.LENGTH_SHORT).show()
                     false -> {
-                        startActivity(Intent(this, StoryActivity::class.java))
+                        startActivity(Intent(this, StoryActivity::class.java).apply {
+                            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                            addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                        })
                         finish()
                     }
                 }
@@ -81,7 +84,10 @@ class LoginActivity : AppCompatActivity() {
     private fun observeLoginToken() {
         viewModel.loginToken.observe(this) {
             if (it.isNotEmpty()) {
-                startActivity(Intent(this, StoryActivity::class.java))
+                startActivity(Intent(this, StoryActivity::class.java).apply {
+                    addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                })
                 finish()
             }
         }
