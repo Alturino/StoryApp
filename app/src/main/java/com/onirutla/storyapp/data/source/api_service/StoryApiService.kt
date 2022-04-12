@@ -21,7 +21,7 @@ interface StoryApiService {
         @Query("page") page: Int = 1,
         @Query("size") size: Int = 1,
         @Header("Authorization") token: String
-    ): Response<PageResponse<StoryResponse>>
+    ): PageResponse<StoryResponse>
 
     @Multipart
     @POST(value = "stories")
@@ -29,6 +29,6 @@ interface StoryApiService {
         @Part description: MultipartBody.Part,
         @Part photo: MultipartBody.Part,
         @Header("Authorization") token: String
-    ): Response<BaseResponse>
+    ): BaseResponse
 
 }
