@@ -22,16 +22,10 @@ class UserRepositoryImpl @Inject constructor(
     override suspend fun registerUser(registerBody: UserRegisterBody): BaseResponse =
         try {
             val response = userApiService.registerUser(registerBody)
-            if (response.isSuccessful) {
-                Log.d("userRepository", "${response.body()}")
-                response.body()!!
-            } else {
-                Log.d("userRepository", "${response.errorBody()}")
-                BaseResponse(error = true, response.message())
-            }
+            response
         } catch (e: Exception) {
             Log.d("userRepository", "$e", e)
-            BaseResponse(error = true, e.localizedMessage)
+            BaseResponse(error = true, e.message)
         }
 
     override suspend fun logoutUser() {
@@ -40,17 +34,11 @@ class UserRepositoryImpl @Inject constructor(
 
     override suspend fun loginUser(loginBody: UserLoginBody): LoginResponse = try {
         val response = userApiService.loginUser(loginBody)
-        if (response.isSuccessful) {
-            Log.d("userRepository", "${response.body()}")
-            response.body()?.loginData?.token?.let { addTokenToPreferences(it) }
-            response.body()!!
-        } else {
-            Log.d("userRepository", "${response.errorBody()}")
-            LoginResponse()
-        }
+        response.loginData?.token?.let { addTokenToPreferences(it) }
+        response
     } catch (e: Exception) {
         Log.d("userRepository", "$e", e)
-        LoginResponse()
+        LoginResponse(error = true, message = e.localizedMessage)
     }
 
     override val userToken: Flow<String> get() = dataStoreManager.preferenceLoginToken
