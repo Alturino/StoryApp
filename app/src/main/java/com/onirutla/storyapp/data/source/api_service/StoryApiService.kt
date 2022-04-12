@@ -31,11 +31,4 @@ interface StoryApiService {
         @Header("Authorization") token: String
     ): Response<BaseResponse>
 
-    @Multipart
-    @POST(value = "stories")
-    suspend fun addNewStoryWithoutToken(
-        @PartMap requestsBody: Map<String, RequestBody>,
-        @Part photo: MultipartBody.Part
-    ): Response<BaseResponse>
-
 }
