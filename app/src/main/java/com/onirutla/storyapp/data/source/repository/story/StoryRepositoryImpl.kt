@@ -39,16 +39,10 @@ class StoryRepositoryImpl @Inject constructor(
             imageMultiPart,
             "Bearer $token"
         )
-        if (response.isSuccessful) {
-            Log.d("addStoryWithToken", "${response.body()}")
-            response.body()!!
-        } else {
-            Log.d("addStoryWithToken", "${response.errorBody()}")
-            BaseResponse()
-        }
+        response
     } catch (e: Exception) {
         Log.d("addStoryWithToken", "$e", e)
-        BaseResponse()
+        BaseResponse(error = true, e.localizedMessage)
     }
 
     override fun getAllStoriesWithToken(token: String): Flow<PagingData<StoryResponse>> = Pager(
