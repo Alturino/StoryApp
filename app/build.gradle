@@ -5,6 +5,7 @@ plugins {
     id 'dagger.hilt.android.plugin'
     id 'kotlin-parcelize'
     id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
+    id 'kover'
 }
 
 android {
@@ -39,6 +40,19 @@ android {
     kotlinOptions {
         jvmTarget = '11'
         useIR = true
+    }
+
+    testOptions {
+        unitTests.all {
+            if (name == "testDebugUnitTest") {
+                kover {
+                    disabled = false
+                    binaryReportFile.set(file("$buildDir/custom/debug-report.bin"))
+                    includes = ['com.onirutla.storyapp.*']
+                    excludes = ['com.onirutla.storyapp.databinding.*', 'androidx.*', 'dagger.*']
+                }
+            }
+        }
     }
 }
 
