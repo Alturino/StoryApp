@@ -21,10 +21,12 @@ class UserRepositoryImpl @Inject constructor(
 
     override suspend fun registerUser(registerBody: UserRegisterBody): BaseResponse =
         try {
+            val (name, email, password) = registerBody
+            if (name.isNullOrEmpty() or email.isNullOrEmpty() or password.isNullOrEmpty())
+                throw Exception()
             val response = userApiService.registerUser(registerBody)
             response
         } catch (e: Exception) {
-            Log.d("userRepository", "$e", e)
             BaseResponse(error = true, e.message)
         }
 
@@ -33,11 +35,13 @@ class UserRepositoryImpl @Inject constructor(
     }
 
     override suspend fun loginUser(loginBody: UserLoginBody): LoginResponse = try {
+        val (email, password) = loginBody
+        if (email.isNullOrEmpty() or password.isNullOrEmpty())
+            throw Exception()
         val response = userApiService.loginUser(loginBody)
         response.loginData?.token?.let { addTokenToPreferences(it) }
         response
     } catch (e: Exception) {
-        Log.d("userRepository", "$e", e)
         LoginResponse(error = true, message = e.localizedMessage)
     }
 
