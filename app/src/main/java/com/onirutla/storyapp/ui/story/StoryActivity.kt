@@ -17,6 +17,7 @@ import com.onirutla.storyapp.data.model.BaseResponse
 import com.onirutla.storyapp.databinding.ActivityStoryBinding
 import com.onirutla.storyapp.ui.add_story.AddStoryActivity
 import com.onirutla.storyapp.ui.login.LoginActivity
+import com.onirutla.storyapp.ui.map.MapStoryActivity
 import com.onirutla.storyapp.util.Constants.ADD_STORY_RESPONSE
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -95,6 +96,9 @@ class StoryActivity : AppCompatActivity() {
             }
             R.id.change_language -> {
                 startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
+            }
+            R.id.to_map -> {
+                startActivity(Intent(this, MapStoryActivity::class.java))
             }
         }
         return super.onOptionsItemSelected(item)
