@@ -11,7 +11,7 @@ import androidx.core.widget.addTextChangedListener
 import com.onirutla.storyapp.data.model.user.body.UserRegisterBody
 import com.onirutla.storyapp.databinding.ActivityRegisterBinding
 import com.onirutla.storyapp.util.Constants.REGISTER_RESPONSE
-import com.onirutla.storyapp.util.isValidEmail
+import com.onirutla.storyapp.util.Util.isValidEmail
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

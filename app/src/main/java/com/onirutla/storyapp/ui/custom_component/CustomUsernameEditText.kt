@@ -6,7 +6,6 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatEditText
-import com.onirutla.storyapp.util.isValidEmail
 
 class CustomUsernameEditText : AppCompatEditText {
 

@@ -18,7 +18,7 @@ import com.onirutla.storyapp.databinding.ActivityLoginBinding
 import com.onirutla.storyapp.ui.register.RegisterActivity
 import com.onirutla.storyapp.ui.story.StoryActivity
 import com.onirutla.storyapp.util.Constants.REGISTER_RESPONSE
-import com.onirutla.storyapp.util.isValidEmail
+import com.onirutla.storyapp.util.Util.isValidEmail
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 

@@ -19,50 +19,54 @@ import java.io.OutputStream
 import java.text.SimpleDateFormat
 import java.util.*
 
-fun String.isValidEmail(): Boolean = Patterns.EMAIL_ADDRESS.matcher(this).matches()
+object Util {
 
-fun File.compressImage(): File {
-    val bitmap = BitmapFactory.decodeFile(path)
-    var streamLength: Int
-    var compressQuality = 100
-    do {
-        val bmpStream = ByteArrayOutputStream()
-        bitmap.compress(Bitmap.CompressFormat.JPEG, compressQuality, bmpStream)
-        val bmpPicByteArray = bmpStream.toByteArray()
-        streamLength = bmpPicByteArray.size
-        compressQuality -= 5
-    } while (streamLength > 1000000)
+    fun String.isValidEmail(): Boolean = Patterns.EMAIL_ADDRESS.matcher(this).matches()
 
-    bitmap.compress(Bitmap.CompressFormat.JPEG, compressQuality, FileOutputStream(this))
-    return this
-}
+    fun File.compressImage(): File {
+        val bitmap = BitmapFactory.decodeFile(path)
+        var streamLength: Int
+        var compressQuality = 100
+        do {
+            val bmpStream = ByteArrayOutputStream()
+            bitmap.compress(Bitmap.CompressFormat.JPEG, compressQuality, bmpStream)
+            val bmpPicByteArray = bmpStream.toByteArray()
+            streamLength = bmpPicByteArray.size
+            compressQuality -= 5
+        } while (streamLength > 1000000)
 
-@BindingAdapter("load_image")
-fun loadImage(view: ImageView, any: Any?) {
-    any?.let { Glide.with(view).load(it).into(view) }
-}
+        bitmap.compress(Bitmap.CompressFormat.JPEG, compressQuality, FileOutputStream(this))
+        return this
+    }
 
-val timeStamp: String = SimpleDateFormat(
-    FILENAME_FORMAT,
-    Locale.US
-).format(System.currentTimeMillis())
+    @BindingAdapter("load_image")
+    fun loadImage(view: ImageView, any: Any?) {
+        any?.let { Glide.with(view).load(it).into(view) }
+    }
 
-fun Context.createTempFile(): File {
-    val storageDir: File? = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
-    return File.createTempFile(timeStamp, ".jpg", storageDir)
-}
+    val timeStamp: String = SimpleDateFormat(
+        FILENAME_FORMAT,
+        Locale.US
+    ).format(System.currentTimeMillis())
 
-fun Uri.uriToFile(context: Context): File {
-    val contentResolver: ContentResolver = context.contentResolver
-    val myFile = context.createTempFile()
+    fun Context.createTempFile(): File {
+        val storageDir: File? = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+        return File.createTempFile(timeStamp, ".jpg", storageDir)
+    }
 
-    val inputStream = contentResolver.openInputStream(this) as InputStream
-    val outputStream: OutputStream = FileOutputStream(myFile)
-    val buf = ByteArray(1024)
-    var len: Int
-    while (inputStream.read(buf).also { len = it } > 0) outputStream.write(buf, 0, len)
-    outputStream.close()
-    inputStream.close()
+    fun Uri.uriToFile(context: Context): File {
+        val contentResolver: ContentResolver = context.contentResolver
+        val myFile = context.createTempFile()
 
-    return myFile
+        val inputStream = contentResolver.openInputStream(this) as InputStream
+        val outputStream: OutputStream = FileOutputStream(myFile)
+        val buf = ByteArray(1024)
+        var len: Int
+        while (inputStream.read(buf).also { len = it } > 0) outputStream.write(buf, 0, len)
+        outputStream.close()
+        inputStream.close()
+
+        return myFile
+    }
+
 }

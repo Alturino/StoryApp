@@ -12,8 +12,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
 import com.onirutla.storyapp.databinding.ActivityAddStoryBinding
 import com.onirutla.storyapp.util.Constants.ADD_STORY_RESPONSE
-import com.onirutla.storyapp.util.createTempFile
-import com.onirutla.storyapp.util.uriToFile
+import com.onirutla.storyapp.util.Util.createTempFile
+import com.onirutla.storyapp.util.Util.uriToFile
 import dagger.hilt.android.AndroidEntryPoint
 import java.io.File
 

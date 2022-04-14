@@ -9,7 +9,7 @@ import com.onirutla.storyapp.data.model.StoryPagingDataSource
 import com.onirutla.storyapp.data.model.story.StoryResponse
 import com.onirutla.storyapp.data.source.api_service.StoryApiService
 import com.onirutla.storyapp.util.Constants.NETWORK_LOAD_SIZE
-import com.onirutla.storyapp.util.compressImage
+import com.onirutla.storyapp.util.Util.compressImage
 import kotlinx.coroutines.flow.Flow
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
