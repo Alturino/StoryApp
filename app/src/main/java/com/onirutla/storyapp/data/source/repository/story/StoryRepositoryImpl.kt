@@ -31,7 +31,7 @@ class StoryRepositoryImpl @Inject constructor(
     }
 
     override suspend fun getStoriesWithTokenAndLocation(token: String): List<StoryResponse> = try {
-        val response = storyApiService.getStoriesWithTokenAndLocation(token = token)
+        val response = storyApiService.getStoriesWithTokenAndLocation(token = "Bearer $token")
         if (response.error == true)
             emptyList()
         else
