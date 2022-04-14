@@ -1,6 +1,5 @@
 package com.onirutla.storyapp.data.source.repository.user
 
-import android.util.Log
 import com.onirutla.storyapp.data.model.BaseResponse
 import com.onirutla.storyapp.data.model.user.body.UserLoginBody
 import com.onirutla.storyapp.data.model.user.body.UserRegisterBody
