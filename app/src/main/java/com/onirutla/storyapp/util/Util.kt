@@ -39,11 +39,6 @@ object Util {
         return this
     }
 
-    @BindingAdapter("load_image")
-    fun loadImage(view: ImageView, any: Any?) {
-        any?.let { Glide.with(view).load(it).into(view) }
-    }
-
     val timeStamp: String = SimpleDateFormat(
         FILENAME_FORMAT,
         Locale.US
@@ -69,4 +64,9 @@ object Util {
         return myFile
     }
 
+}
+
+@BindingAdapter("load_image")
+fun loadImage(view: ImageView, any: Any?) {
+    any?.let { Glide.with(view).load(it).into(view) }
 }
