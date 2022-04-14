@@ -1,7 +1,6 @@
 package com.onirutla.storyapp.ui.story
 
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
@@ -23,7 +22,7 @@ class StoryViewModel @Inject constructor(
 ) : ViewModel() {
 
     private val _stories = MutableStateFlow<PagingData<StoryResponse>>(PagingData.empty())
-    val stories = _stories.cachedIn(viewModelScope).asLiveData(viewModelScope.coroutineContext)
+    val stories = _stories.cachedIn(viewModelScope)
 
     init {
         viewModelScope.launch {
