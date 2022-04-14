@@ -6,7 +6,7 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class LoginResponse(
     @Json(name = "error")
-    val error: Boolean? = false,
+    val error: Boolean? = true,
     @Json(name = "loginResult")
     val loginData: LoginData? = LoginData(),
     @Json(name = "message")
