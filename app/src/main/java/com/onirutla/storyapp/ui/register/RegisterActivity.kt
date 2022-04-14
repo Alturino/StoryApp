@@ -8,11 +8,13 @@ import android.widget.Toast.LENGTH_SHORT
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
+import androidx.lifecycle.lifecycleScope
 import com.onirutla.storyapp.data.model.user.body.UserRegisterBody
 import com.onirutla.storyapp.databinding.ActivityRegisterBinding
 import com.onirutla.storyapp.util.Constants.REGISTER_RESPONSE
 import com.onirutla.storyapp.util.Util.isValidEmail
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class RegisterActivity : AppCompatActivity() {
@@ -36,7 +38,9 @@ class RegisterActivity : AppCompatActivity() {
             val username = binding.username.text.toString()
             val email = binding.email.text.toString()
             val password = binding.password.text.toString()
-            viewModel.register(UserRegisterBody(username, email, password))
+            lifecycleScope.launch {
+                viewModel.register(UserRegisterBody(username, email, password))
+            }
         }
     }
 
