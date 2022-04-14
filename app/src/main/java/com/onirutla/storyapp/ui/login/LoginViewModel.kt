@@ -20,7 +20,7 @@ class LoginViewModel @Inject constructor(
     val loginResponse: LiveData<LoginResponse> get() = _loginResponse
     private val _loginResponse = MutableLiveData<LoginResponse>()
 
-    val loginToken = userRepository.userToken.asLiveData(viewModelScope.coroutineContext)
+    val loginToken = userRepository.userToken
 
     fun login(userLoginBody: UserLoginBody) {
         viewModelScope.launch {

@@ -12,6 +12,9 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import com.onirutla.storyapp.data.model.BaseResponse
 import com.onirutla.storyapp.data.model.user.body.UserLoginBody
 import com.onirutla.storyapp.databinding.ActivityLoginBinding
@@ -21,6 +24,8 @@ import com.onirutla.storyapp.util.Constants.REGISTER_RESPONSE
 import com.onirutla.storyapp.util.Util.isValidEmail
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 @ExperimentalCoroutinesApi
@@ -82,13 +87,17 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun observeLoginToken() {
-        viewModel.loginToken.observe(this) {
-            if (it.isNotEmpty()) {
-                startActivity(Intent(this, StoryActivity::class.java).apply {
-                    addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                    addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
-                })
-                finish()
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.RESUMED) {
+                viewModel.loginToken.collect {
+                    if (it.isNotEmpty()) {
+                        startActivity(Intent(this@LoginActivity, StoryActivity::class.java).apply {
+                            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                            addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                        })
+                        finish()
+                    }
+                }
             }
         }
     }
