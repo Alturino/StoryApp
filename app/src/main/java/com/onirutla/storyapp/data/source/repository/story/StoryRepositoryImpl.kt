@@ -22,7 +22,10 @@ class StoryRepositoryImpl @Inject constructor(
         token: String
     ): BaseResponse = try {
         val response = storyApiService.addNewStoryWithToken(description, image, token)
-        response
+        if (response.error == true)
+            BaseResponse(error = true, message = response.message)
+        else
+            response
     } catch (e: Exception) {
         BaseResponse(error = true, e.localizedMessage)
     }
