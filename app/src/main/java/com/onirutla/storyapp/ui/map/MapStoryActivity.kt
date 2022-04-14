@@ -3,6 +3,7 @@ package com.onirutla.storyapp.ui.map
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -12,11 +13,15 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.onirutla.storyapp.R
 import com.onirutla.storyapp.databinding.ActivityMapStoryBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MapStoryActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
     private lateinit var binding: ActivityMapStoryBinding
+
+    private val viewModel: MapStoryViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -77,8 +82,15 @@ class MapStoryActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.uiSettings.isCompassEnabled = true
         mMap.uiSettings.isMapToolbarEnabled = true
 
-        val sydney = LatLng(-34.0, 151.0)
-        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        viewModel.stories.observe(this) { stories ->
+            val firstStory = LatLng((stories.first().lat?:0) as Double, (stories.first().lon?:0) as Double)
+            val storiesLatLng =
+                stories.map { LatLng((it.lat ?: 0) as Double, (it.lon ?: 0) as Double) }
+            storiesLatLng.forEachIndexed { index, latlng ->
+                mMap.addMarker(MarkerOptions().position(latlng).title(stories[index].name))
+            }
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(firstStory))
+        }
+
     }
 }
