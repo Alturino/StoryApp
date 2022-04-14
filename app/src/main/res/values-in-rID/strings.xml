@@ -13,4 +13,6 @@
     <string name="didn_t_have_an_account">Tidak punya akun ?</string>
     <string name="logout">Keluar</string>
     <string name="change_language">Ganti Bahasa</string>
+    <string name="satellite_type">Satelit</string>
+    <string name="terrain_type">Dataran</string>
 </resources>
