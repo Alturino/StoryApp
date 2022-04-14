@@ -5,7 +5,6 @@ import com.onirutla.storyapp.data.model.user.body.UserLoginBody
 import com.onirutla.storyapp.data.model.user.body.UserRegisterBody
 import com.onirutla.storyapp.data.model.user.response.LoginResponse
 import kotlinx.coroutines.flow.Flow
-import retrofit2.Response
 
 interface UserRepository {
 
