@@ -7,6 +7,7 @@ import com.onirutla.storyapp.data.model.user.response.LoginResponse
 import com.onirutla.storyapp.data.source.DataStoreManager
 import com.onirutla.storyapp.data.source.api_service.UserApiService
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.first
 import javax.inject.Inject
 
 class UserRepositoryImpl @Inject constructor(
@@ -45,4 +46,10 @@ class UserRepositoryImpl @Inject constructor(
     }
 
     override val userToken: Flow<String> get() = dataStoreManager.preferenceLoginToken
+
+    override suspend fun getUserToken(): String = dataStoreManager.preferenceLoginToken.first()
+
+    override suspend fun setUserToken(token: String) {
+        dataStoreManager.updateLoginToken(token)
+    }
 }
