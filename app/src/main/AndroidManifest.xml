@@ -28,6 +28,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.StoryApp">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${MAP_API_KEY}" />
+
+        <activity
+            android:name=".ui.map.MapStoryActivity"
+            android:exported="false"
+            android:label="@string/title_activity_map_story" />
         <activity
             android:name=".ui.register.RegisterActivity"
             android:exported="false" />
