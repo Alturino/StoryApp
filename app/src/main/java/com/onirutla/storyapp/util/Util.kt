@@ -11,6 +11,10 @@ import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.onirutla.storyapp.util.Constants.FILENAME_FORMAT
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
+import okhttp3.RequestBody.Companion.asRequestBody
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
@@ -23,6 +27,7 @@ object Util {
 
     fun String.isValidEmail(): Boolean = Patterns.EMAIL_ADDRESS.matcher(this).matches()
 
+    @JvmStatic
     fun File.compressImage(): File {
         val bitmap = BitmapFactory.decodeFile(path)
         var streamLength: Int
@@ -39,7 +44,7 @@ object Util {
         return this
     }
 
-    val timeStamp: String = SimpleDateFormat(
+    private val timeStamp: String = SimpleDateFormat(
         FILENAME_FORMAT,
         Locale.US
     ).format(System.currentTimeMillis())
@@ -63,6 +68,25 @@ object Util {
 
         return myFile
     }
+
+    @JvmStatic
+    fun File.toRequestBody(): RequestBody =
+        this.compressImage().asRequestBody("image/jpeg".toMediaTypeOrNull())
+
+    @JvmStatic
+    fun File.toMultipart(): MultipartBody.Part {
+        val imageRequestBody = this.toRequestBody()
+        return MultipartBody.Part.createFormData(
+            "photo",
+            this.name,
+            imageRequestBody
+        )
+    }
+
+    @JvmStatic
+    fun String.toMultipart(): MultipartBody.Part =
+        MultipartBody.Part.createFormData("description", this)
+
 
 }
 
