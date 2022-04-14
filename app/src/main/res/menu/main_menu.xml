@@ -12,5 +12,11 @@
         android:icon="@drawable/ic_baseline_language_24"
         android:title="@string/change_language"
         app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/to_map"
+        android:icon="@drawable/ic_baseline_map_24"
+        android:title="@string/map"
+        app:showAsAction="ifRoom" />
+
 
 </menu>
