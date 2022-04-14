@@ -1,6 +1,5 @@
 package com.onirutla.storyapp.data.source.repository.story
 
-import android.util.Log
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
@@ -9,12 +8,8 @@ import com.onirutla.storyapp.data.model.StoryPagingDataSource
 import com.onirutla.storyapp.data.model.story.StoryResponse
 import com.onirutla.storyapp.data.source.api_service.StoryApiService
 import com.onirutla.storyapp.util.Constants.NETWORK_LOAD_SIZE
-import com.onirutla.storyapp.util.Util.compressImage
 import kotlinx.coroutines.flow.Flow
-import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
-import okhttp3.RequestBody.Companion.asRequestBody
-import java.io.File
 import javax.inject.Inject
 
 class StoryRepositoryImpl @Inject constructor(
@@ -22,26 +17,13 @@ class StoryRepositoryImpl @Inject constructor(
 ) : StoryRepository {
 
     override suspend fun addNewStoryWithToken(
-        description: String,
-        image: File,
+        description: MultipartBody.Part,
+        image: MultipartBody.Part,
         token: String
     ): BaseResponse = try {
-        val compressedImage = image.compressImage()
-        val descriptionMultipart = MultipartBody.Part.createFormData("description", description)
-        val imageRequestBody = compressedImage.asRequestBody("image/jpeg".toMediaTypeOrNull())
-        val imageMultiPart = MultipartBody.Part.createFormData(
-            "photo",
-            compressedImage.name,
-            imageRequestBody
-        )
-        val response = storyApiService.addNewStoryWithToken(
-            descriptionMultipart,
-            imageMultiPart,
-            "Bearer $token"
-        )
+        val response = storyApiService.addNewStoryWithToken(description, image, token)
         response
     } catch (e: Exception) {
-        Log.d("addStoryWithToken", "$e", e)
         BaseResponse(error = true, e.localizedMessage)
     }
 
