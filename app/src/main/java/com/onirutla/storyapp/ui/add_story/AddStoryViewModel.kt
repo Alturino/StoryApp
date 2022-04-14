@@ -7,9 +7,13 @@ import androidx.lifecycle.viewModelScope
 import com.onirutla.storyapp.data.model.BaseResponse
 import com.onirutla.storyapp.data.source.repository.story.StoryRepository
 import com.onirutla.storyapp.data.source.repository.user.UserRepository
+import com.onirutla.storyapp.util.Util.compressImage
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.MultipartBody
+import okhttp3.RequestBody.Companion.asRequestBody
 import java.io.File
 import javax.inject.Inject
 
@@ -35,8 +39,20 @@ class AddStoryViewModel @Inject constructor(
 
     fun addNewStoryWithToken(description: String, image: File) {
         viewModelScope.launch {
+            val compressedImage = image.compressImage()
+            val imageRequestBody = compressedImage.asRequestBody("image/jpeg".toMediaTypeOrNull())
+            val imageMultiPart = MultipartBody.Part.createFormData(
+                "photo",
+                compressedImage.name,
+                imageRequestBody
+            )
+            val descriptionMultipart = MultipartBody.Part.createFormData("description", description)
             token.collect {
-                _response.value = storyRepository.addNewStoryWithToken(description, image, it)
+                _response.value = storyRepository.addNewStoryWithToken(
+                    descriptionMultipart,
+                    imageMultiPart,
+                    "Bearer $token"
+                )
             }
         }
     }
