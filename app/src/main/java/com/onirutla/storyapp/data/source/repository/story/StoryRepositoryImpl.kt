@@ -27,6 +27,16 @@ class StoryRepositoryImpl @Inject constructor(
         BaseResponse(error = true, e.localizedMessage)
     }
 
+    override suspend fun getStoriesWithTokenAndLocation(token: String): List<StoryResponse> = try {
+        val response = storyApiService.getStoriesWithTokenAndLocation(token = token)
+        if (response.error == true)
+            emptyList()
+        else
+            response.listStory.orEmpty()
+    } catch (e: Exception) {
+        emptyList()
+    }
+
     override fun getAllStoriesWithToken(token: String): Flow<PagingData<StoryResponse>> = Pager(
         config = PagingConfig(pageSize = NETWORK_LOAD_SIZE, enablePlaceholders = false),
         pagingSourceFactory = {

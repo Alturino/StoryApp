@@ -15,5 +15,7 @@ interface StoryRepository {
         token: String
     ): BaseResponse
 
+    suspend fun getStoriesWithTokenAndLocation(token: String): List<StoryResponse>
+
     fun getAllStoriesWithToken(token: String): Flow<PagingData<StoryResponse>>
 }

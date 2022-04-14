@@ -22,7 +22,7 @@ interface StoryApiService {
     ): PageResponse<StoryResponse>
 
     @GET(value = "stories")
-    suspend fun getStoriesWithTokenAndLatitude(
+    suspend fun getStoriesWithTokenAndLocation(
         @Query("page") page: Int = 1,
         @Query("size") size: Int = NETWORK_LOAD_SIZE,
         @Header("Authorization") token: String,
