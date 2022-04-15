@@ -3,6 +3,7 @@ package com.onirutla.storyapp.ui.map
 import DataDummy
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.onirutla.storyapp.MainCoroutineRule
+import com.onirutla.storyapp.data.model.PageResponse
 import com.onirutla.storyapp.data.model.story.StoryResponse
 import com.onirutla.storyapp.data.source.repository.story.StoryRepository
 import com.onirutla.storyapp.data.source.repository.user.UserRepository
@@ -42,14 +43,14 @@ class MapStoryViewModelTest {
     @Test
     fun `given empty stories should return with empty data`() =
         mainCoroutineRule.runBlockingTest {
-            val expected = emptyList<StoryResponse>()
+            val expected = PageResponse<StoryResponse>()
             `when`(userRepository.getUserToken()).thenReturn(token)
             `when`(storyRepository.getStoriesWithTokenAndLocation(token)).thenReturn(expected)
             mapStoryViewModel = MapStoryViewModel(storyRepository, userRepository)
 
             val actual = mapStoryViewModel.stories.getOrAwaitValue()
 
-            assertEquals(expected, actual)
+            assertEquals(expected.listStory, actual)
 
             verify(userRepository).getUserToken()
             verify(storyRepository).getStoriesWithTokenAndLocation(token)
@@ -57,14 +58,14 @@ class MapStoryViewModelTest {
 
     @Test
     fun `given stories should return with stories`() = mainCoroutineRule.runBlockingTest {
-        val expected = DataDummy.generateStories()
+        val expected = PageResponse(listStory = DataDummy.generateStories())
         `when`(userRepository.getUserToken()).thenReturn(token)
         `when`(storyRepository.getStoriesWithTokenAndLocation(token)).thenReturn(expected)
         mapStoryViewModel = MapStoryViewModel(storyRepository, userRepository)
 
         val actual = mapStoryViewModel.stories.getOrAwaitValue()
 
-        assertEquals(expected, actual)
+        assertEquals(expected.listStory, actual)
 
         verify(userRepository).getUserToken()
         verify(storyRepository).getStoriesWithTokenAndLocation(token)

@@ -23,7 +23,8 @@ class MapStoryViewModel @Inject constructor(
     init {
         viewModelScope.launch {
             val token = userRepository.getUserToken()
-            _stories.value = storyRepository.getStoriesWithTokenAndLocation(token)
+            val response = storyRepository.getStoriesWithTokenAndLocation(token)
+            _stories.value = response.listStory.orEmpty()
         }
     }
 
