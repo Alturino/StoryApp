@@ -7,6 +7,7 @@ import androidx.paging.cachedIn
 import com.onirutla.storyapp.data.model.story.StoryResponse
 import com.onirutla.storyapp.data.source.repository.story.StoryRepository
 import com.onirutla.storyapp.data.source.repository.user.UserRepository
+import com.onirutla.storyapp.util.wrapEspressoIdlingResource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -25,20 +26,24 @@ class StoryViewModel @Inject constructor(
     val stories = _stories.cachedIn(viewModelScope)
 
     init {
-        viewModelScope.launch {
-            userRepository.userToken.collect { token ->
-                storyRepository.getAllStoriesWithToken(token).collect {
-                    _stories.value = it
+        wrapEspressoIdlingResource {
+            viewModelScope.launch {
+                userRepository.userToken.collect { token ->
+                    storyRepository.getAllStoriesWithToken(token).collect {
+                        _stories.value = it
+                    }
                 }
             }
         }
     }
 
     fun getNewestStory() {
-        viewModelScope.launch {
-            userRepository.userToken.collect { token ->
-                storyRepository.getAllStoriesWithToken(token).collect {
-                    _stories.value = it
+        wrapEspressoIdlingResource {
+            viewModelScope.launch {
+                userRepository.userToken.collect { token ->
+                    storyRepository.getAllStoriesWithToken(token).collect {
+                        _stories.value = it
+                    }
                 }
             }
         }
