@@ -1,7 +1,7 @@
 package com.onirutla.storyapp.data.source.repository.story
 
+import DataDummy
 import androidx.paging.PagingData
-import com.onirutla.storyapp.data.DataDummy
 import com.onirutla.storyapp.data.model.BaseResponse
 import com.onirutla.storyapp.data.model.story.StoryResponse
 import kotlinx.coroutines.flow.Flow
