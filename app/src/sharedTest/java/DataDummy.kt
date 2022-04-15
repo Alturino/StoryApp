@@ -1,5 +1,3 @@
-package com.onirutla.storyapp.data
-
 import com.onirutla.storyapp.data.model.story.StoryResponse
 
 object DataDummy {
