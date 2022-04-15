@@ -8,23 +8,31 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf
 import okhttp3.MultipartBody
 
-class FakeStoryRepository : StoryRepository {
+object FakeStoryRepository : StoryRepository {
+
     override suspend fun addNewStoryWithToken(
         description: MultipartBody.Part,
         image: MultipartBody.Part,
         token: String
     ): BaseResponse {
         if (token.isEmpty()) {
-            return BaseResponse(error = true)
+            throw IllegalArgumentException()
         }
         return BaseResponse(error = false)
     }
 
-    override fun getAllStoriesWithToken(token: String): Flow<PagingData<StoryResponse>> {
+    override fun getAllStoriesWithToken(token: String): Flow<PagingData<StoryResponse>> =
         if (token.isEmpty())
-            return flowOf(PagingData.empty())
+            throw IllegalArgumentException()
         else {
-            return flowOf(PagingData.from(DataDummy.generateStories()))
+            flowOf(PagingData.from(DataDummy.generateStories()))
         }
-    }
+
+
+    override suspend fun getStoriesWithTokenAndLocation(token: String): List<StoryResponse> =
+        if (token.isEmpty())
+            throw IllegalArgumentException()
+        else
+            DataDummy.generateStories()
+
 }
