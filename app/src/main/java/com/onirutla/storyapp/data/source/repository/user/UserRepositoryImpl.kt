@@ -47,7 +47,10 @@ class UserRepositoryImpl @Inject constructor(
 
     override val userToken: Flow<String> get() = dataStoreManager.preferenceLoginToken
 
-    override suspend fun getUserToken(): String = dataStoreManager.preferenceLoginToken.first()
+    override suspend fun getUserToken(): String {
+        val flowOfToken = dataStoreManager.preferenceLoginToken
+        return flowOfToken.first()
+    }
 
     override suspend fun setUserToken(token: String) {
         dataStoreManager.updateLoginToken(token)
