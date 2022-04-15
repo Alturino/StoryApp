@@ -6,7 +6,7 @@ import com.onirutla.storyapp.data.model.BaseResponse
 import com.onirutla.storyapp.data.model.user.body.UserRegisterBody
 import com.onirutla.storyapp.data.source.repository.user.UserRepository
 import com.onirutla.storyapp.data.source.repository.user.UserRepositoryImpl
-import com.onirutla.storyapp.getOrAwaitValue
+import getOrAwaitValue
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Assert.assertEquals

@@ -5,7 +5,7 @@ import com.onirutla.storyapp.MainCoroutineRule
 import com.onirutla.storyapp.data.model.user.body.UserLoginBody
 import com.onirutla.storyapp.data.model.user.response.LoginResponse
 import com.onirutla.storyapp.data.source.repository.user.UserRepository
-import com.onirutla.storyapp.getOrAwaitValue
+import getOrAwaitValue
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.test.runBlockingTest

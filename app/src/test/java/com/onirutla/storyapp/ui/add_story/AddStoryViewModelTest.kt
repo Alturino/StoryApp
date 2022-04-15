@@ -5,7 +5,7 @@ import com.onirutla.storyapp.MainCoroutineRule
 import com.onirutla.storyapp.data.model.BaseResponse
 import com.onirutla.storyapp.data.source.repository.story.StoryRepository
 import com.onirutla.storyapp.data.source.repository.user.UserRepository
-import com.onirutla.storyapp.getOrAwaitValue
+import getOrAwaitValue
 import com.onirutla.storyapp.util.Util
 import com.onirutla.storyapp.util.Util.compressImage
 import com.onirutla.storyapp.util.Util.toMultipart
