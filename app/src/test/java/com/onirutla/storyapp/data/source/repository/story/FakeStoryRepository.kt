@@ -3,6 +3,7 @@ package com.onirutla.storyapp.data.source.repository.story
 import DataDummy
 import androidx.paging.PagingData
 import com.onirutla.storyapp.data.model.BaseResponse
+import com.onirutla.storyapp.data.model.PageResponse
 import com.onirutla.storyapp.data.model.story.StoryResponse
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf
@@ -29,10 +30,10 @@ object FakeStoryRepository : StoryRepository {
         }
 
 
-    override suspend fun getStoriesWithTokenAndLocation(token: String): List<StoryResponse> =
+    override suspend fun getStoriesWithTokenAndLocation(token: String): PageResponse<StoryResponse> =
         if (token.isEmpty())
             throw IllegalArgumentException()
         else
-            DataDummy.generateStories()
+            PageResponse(error = false, listStory = DataDummy.generateStories())
 
 }

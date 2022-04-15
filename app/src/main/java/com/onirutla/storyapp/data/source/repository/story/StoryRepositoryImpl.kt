@@ -4,6 +4,7 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.onirutla.storyapp.data.model.BaseResponse
+import com.onirutla.storyapp.data.model.PageResponse
 import com.onirutla.storyapp.data.model.StoryPagingDataSource
 import com.onirutla.storyapp.data.model.story.StoryResponse
 import com.onirutla.storyapp.data.source.api_service.StoryApiService
@@ -22,23 +23,18 @@ class StoryRepositoryImpl @Inject constructor(
         token: String
     ): BaseResponse = try {
         val response = storyApiService.addNewStoryWithToken(description, image, token)
-        if (response.error == true)
-            BaseResponse(error = true, message = response.message)
-        else
-            response
+        response
     } catch (e: Exception) {
         BaseResponse(error = true, e.localizedMessage)
     }
 
-    override suspend fun getStoriesWithTokenAndLocation(token: String): List<StoryResponse> = try {
-        val response = storyApiService.getStoriesWithTokenAndLocation(token = "Bearer $token")
-        if (response.error == true)
-            emptyList()
-        else
-            response.listStory.orEmpty()
-    } catch (e: Exception) {
-        emptyList()
-    }
+    override suspend fun getStoriesWithTokenAndLocation(token: String): PageResponse<StoryResponse> =
+        try {
+            val response = storyApiService.getStoriesWithTokenAndLocation(token = "Bearer $token")
+            response
+        } catch (e: Exception) {
+            PageResponse(error = true, emptyList(), message = e.localizedMessage)
+        }
 
     override fun getAllStoriesWithToken(token: String): Flow<PagingData<StoryResponse>> = Pager(
         config = PagingConfig(pageSize = NETWORK_LOAD_SIZE, enablePlaceholders = false),
