@@ -5,7 +5,7 @@ import com.onirutla.storyapp.data.model.story.StoryResponse
 import com.onirutla.storyapp.data.source.api_service.StoryApiService
 import com.onirutla.storyapp.util.Constants.NETWORK_LOAD_SIZE
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.test.runTest
+import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
@@ -29,7 +29,7 @@ class StoryPagingDataSourceTest {
     }
 
     @Test
-    fun loadReturnsPageWhenOnSuccessfulLoadOfItemKeyedData() = runTest {
+    fun loadReturnsPageWhenOnSuccessfulLoadOfItemKeyedData() = runBlockingTest {
         `when`(storyApiService.getAllStoriesWithToken(page, size, token)).thenReturn(
             PageResponse(
                 listStory = listOf(

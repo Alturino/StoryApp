@@ -3,7 +3,7 @@ package com.onirutla.storyapp.data.source.repository.story
 import com.onirutla.storyapp.data.model.BaseResponse
 import com.onirutla.storyapp.data.source.api_service.StoryApiService
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.test.runTest
+import kotlinx.coroutines.test.runBlockingTest
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
@@ -32,7 +32,7 @@ class StoryRepositoryTest {
     }
 
     @Test
-    fun `given token getAllStoriesWithToken should not return null`() = runTest {
+    fun `given token getAllStoriesWithToken should not return null`() = runBlockingTest {
         val actual = storyRepository.getAllStoriesWithToken(token)
 
 
@@ -41,7 +41,7 @@ class StoryRepositoryTest {
 
     @Test
     fun `given imageMultiPart, descriptionMultiPart, token addNewStoryWithoutToken should return BaseResponse(error=false)`() =
-        runTest {
+        runBlockingTest {
             val description = "description"
             val image = File("image")
             val imageRequestBody = image.asRequestBody("image/jpeg".toMediaTypeOrNull())

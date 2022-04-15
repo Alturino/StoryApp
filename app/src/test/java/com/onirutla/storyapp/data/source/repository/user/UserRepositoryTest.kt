@@ -10,7 +10,7 @@ import com.onirutla.storyapp.data.source.api_service.UserApiService
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flowOf
-import kotlinx.coroutines.test.runTest
+import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
@@ -40,7 +40,7 @@ class UserRepositoryTest {
 
     @Test
     fun `given empty UserRegisterBody registerUser should return BaseResponse(error = true)`() =
-        runTest {
+        runBlockingTest {
             val emptyUserRegisterBody = UserRegisterBody()
             val actual = userRepository.registerUser(emptyUserRegisterBody)
 
@@ -49,7 +49,7 @@ class UserRepositoryTest {
 
     @Test
     fun `given UserRegisterBody with empty name registerUser should return BaseResponse(error = true)`() =
-        runTest {
+        runBlockingTest {
             val registerBodyWithEmptyName =
                 UserRegisterBody(email, password)
             val actual = userRepository.registerUser(registerBodyWithEmptyName)
@@ -59,7 +59,7 @@ class UserRepositoryTest {
 
     @Test
     fun `given UserRegisterBody with empty email registerUser should return BaseResponse(error = true)`() =
-        runTest {
+        runBlockingTest {
             val registerBodyWithEmptyEmail = UserRegisterBody(name, password)
             val actual = userRepository.registerUser(registerBodyWithEmptyEmail)
 
@@ -68,7 +68,7 @@ class UserRepositoryTest {
 
     @Test
     fun `given UserRegisterBody with empty password registerUser should return BaseResponse(error = true)`() =
-        runTest {
+        runBlockingTest {
             val registerBodyWithEmptyPassword =
                 UserRegisterBody(name, email)
             val actual = userRepository.registerUser(registerBodyWithEmptyPassword)
@@ -78,7 +78,7 @@ class UserRepositoryTest {
 
     @Test
     fun `given UserRegisterBody registerUser should return BaseResponse(error = false)`() =
-        runTest {
+        runBlockingTest {
             val registerBody = UserRegisterBody(name, email, password)
             `when`(userApiService.registerUser(registerBody)).thenReturn(BaseResponse(error = false))
             val actual = userRepository.registerUser(registerBody)
@@ -89,7 +89,7 @@ class UserRepositoryTest {
         }
 
     @Test
-    fun `clearUserToken should be called only once when logout`() = runTest {
+    fun `clearUserToken should be called only once when logout`() = runBlockingTest {
         userRepository.logoutUser()
 
         verify(dataStoreManager).clearUserToken()
@@ -97,7 +97,7 @@ class UserRepositoryTest {
 
     @Test
     fun `given empty UserLoginBody loginUser() should return BaseResponse(error = true)`() =
-        runTest {
+        runBlockingTest {
             val emptyUserLoginBody = UserLoginBody()
             val actual = userRepository.loginUser(emptyUserLoginBody)
 
@@ -106,7 +106,7 @@ class UserRepositoryTest {
 
     @Test
     fun `given UserLoginBody with empty email loginUser() should return BaseResponse(error = true)`() =
-        runTest {
+        runBlockingTest {
             val loginBodyWithEmptyEmail = UserLoginBody(email, password)
             val actual = userRepository.loginUser(loginBodyWithEmptyEmail)
 
@@ -115,7 +115,7 @@ class UserRepositoryTest {
 
     @Test
     fun `given UserLoginBody with empty password loginUser() should return BaseResponse(error = true)`() =
-        runTest {
+        runBlockingTest {
             val loginBodyWithEmptyPassword = UserLoginBody(email, password)
             val actual = userRepository.loginUser(loginBodyWithEmptyPassword)
 
@@ -123,7 +123,7 @@ class UserRepositoryTest {
         }
 
     @Test
-    fun `given UserLoginBody loginUser() should return BaseResponse(error = false)`() = runTest {
+    fun `given UserLoginBody loginUser() should return BaseResponse(error = false)`() = runBlockingTest {
         val loginBody = UserLoginBody(email, password)
         `when`(userApiService.loginUser(loginBody)).thenReturn(LoginResponse(false, loginData))
 
@@ -136,7 +136,7 @@ class UserRepositoryTest {
     }
 
     @Test
-    fun getUserToken() = runTest {
+    fun getUserToken() = runBlockingTest {
         val expected = flowOf(loginToken)
         `when`(dataStoreManager.preferenceLoginToken).thenReturn(expected)
 
