@@ -136,14 +136,34 @@ class UserRepositoryTest {
     }
 
     @Test
-    fun getUserToken() = runBlockingTest {
+    fun `given flowOf token should return token`() = runBlockingTest {
         val expected = flowOf(loginToken)
         `when`(dataStoreManager.preferenceLoginToken).thenReturn(expected)
 
-        val actual = userRepository.userToken
+        val actual = userRepository.userToken.first()
 
-        assertEquals(expected.first(), actual.first())
+        assertEquals(expected.first(), actual)
 
         verify(dataStoreManager).preferenceLoginToken
+    }
+
+    @Test
+    fun `getUserToken should only called preferenceLoginToken once`() = runBlockingTest {
+        val expected = loginToken
+        `when`(dataStoreManager.preferenceLoginToken).thenReturn(flowOf(loginToken))
+
+        val actual = userRepository.getUserToken()
+
+        assertEquals(expected, actual)
+
+        verify(dataStoreManager).preferenceLoginToken
+    }
+
+
+    @Test
+    fun `updateLoginToken should only called once`() = runBlockingTest {
+        userRepository.setUserToken(loginToken)
+
+        verify(dataStoreManager).updateLoginToken(loginToken)
     }
 }
