@@ -12,8 +12,7 @@
     <string name="didn_t_have_an_account">Didn\'t have an account ?</string>
     <string name="logout">Logout</string>
     <string name="change_language">Change Language</string>
-    <string name="title_activity_map_story" translatable="false">MapStoryActivity</string>
-    <string name="title_activity_maps" translatable="false">MapsActivity</string>
+    <string name="map_story" translatable="false">Map Story</string>
     <string name="normal_type" translatable="false">Normal</string>
     <string name="satellite_type">Satellite</string>
     <string name="terrain_type">Terrain</string>
