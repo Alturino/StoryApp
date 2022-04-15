@@ -1,0 +1,96 @@
+{
+  "error": false,
+  "message": "Stories fetched successfully",
+  "listStory": [
+    {
+      "id": "story-vWEDweKnx3hB_-JD",
+      "name": "lastgan",
+      "description": "ngantuk bre",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1650027250556_tzbWZ2YV.jpg",
+      "createdAt": "2022-04-15T12:54:10.557Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-FL9OTV8fNa3TT8id",
+      "name": "nabil",
+      "description": "\"\"",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1650027014402_hoqeppVv.jpg",
+      "createdAt": "2022-04-15T12:50:14.406Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-jHAoFlB0UNrz5hzw",
+      "name": "teshqemu",
+      "description": "tes",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1650026884119_ANjAr9og.jpg",
+      "createdAt": "2022-04-15T12:48:04.123Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-HcXrXEznX8V0r7Ok",
+      "name": "User",
+      "description": "keyboard android, senggol dong",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1650026649112_fs9-Vnut.jpg",
+      "createdAt": "2022-04-15T12:44:09.115Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-zCC7FGcuRS5NmAON",
+      "name": "teshqemu",
+      "description": "y",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1650026493578_FuyRybj6.jpg",
+      "createdAt": "2022-04-15T12:41:33.582Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-ndVByoy1k4pO5ka-",
+      "name": "teshqemu",
+      "description": "y",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1650026444784_GHfcNABk.jpg",
+      "createdAt": "2022-04-15T12:40:44.789Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-dP6GmIKn2tPKxN5C",
+      "name": "nanag",
+      "description": "keychron men",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1650026439022_gsoL2hkG.jpg",
+      "createdAt": "2022-04-15T12:40:39.029Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-i6axwZswNVYwL5fp",
+      "name": "Akagami",
+      "description": "keyboard warnet gan",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1650026375988_6WCK7Yyk.jpg",
+      "createdAt": "2022-04-15T12:39:35.991Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-n8GLR5MBjAFyDjsk",
+      "name": "teshqemu",
+      "description": "tess",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1650026336801_PPluEXJ3.jpg",
+      "createdAt": "2022-04-15T12:38:56.804Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-hjmaIvKRvyC-t8QQ",
+      "name": "User",
+      "description": "hah kosong",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1650026329668_nY0ErP_y.jpg",
+      "createdAt": "2022-04-15T12:38:49.670Z",
+      "lat": null,
+      "lon": null
+    }
+  ]
+}
