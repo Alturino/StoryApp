@@ -1,9 +1,11 @@
 package com.onirutla.storyapp.data.source.repository.story
 
+import androidx.test.espresso.idling.CountingIdlingResource
 import com.onirutla.storyapp.data.model.BaseResponse
 import com.onirutla.storyapp.data.model.PageResponse
 import com.onirutla.storyapp.data.model.story.StoryResponse
 import com.onirutla.storyapp.data.source.api_service.StoryApiService
+import com.onirutla.storyapp.util.EspressoIdlingResource
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runBlockingTest
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -13,12 +15,14 @@ import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Before
 import org.junit.Test
-import org.mockito.Mockito.`when`
-import org.mockito.Mockito.mock
-import org.mockito.Mockito.verify
+import org.junit.runner.RunWith
+import org.mockito.Mockito.*
+import org.mockito.junit.MockitoJUnitRunner
 import java.io.File
 
+
 @ExperimentalCoroutinesApi
+@RunWith(MockitoJUnitRunner::class)
 class StoryRepositoryTest {
 
     private lateinit var storyRepository: StoryRepository
