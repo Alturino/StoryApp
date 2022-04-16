@@ -42,7 +42,7 @@ class StoryViewModelTest {
     }
 
     @Test
-    fun `given PagingData empty stories shouldn't be null`() = mainCoroutineRule.runBlockingTest {
+    fun `given PagingData getAllStoriesWithToken shouldn't be null`() = mainCoroutineRule.runBlockingTest {
         val expected =
             MutableStateFlow(PagingData.empty<StoryResponse>()).cachedIn(storyViewModel.viewModelScope)
         `when`(userRepository.userToken).thenReturn(flowOf(token))
