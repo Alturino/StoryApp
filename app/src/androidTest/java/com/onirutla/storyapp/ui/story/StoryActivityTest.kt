@@ -56,7 +56,7 @@ class StoryActivityTest {
     }
 
     @Test
-    fun test() {
+    fun givenSuccessResponse_shouldShowList_AndClickToDetail_AndBack() {
         val mockResponse = MockResponse().setResponseCode(200)
             .setBody(JsonConverter.readStringFromFile("story.json"))
         mockWebServer.enqueue(mockResponse)
