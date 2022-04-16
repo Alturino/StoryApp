@@ -65,6 +65,7 @@ android {
             }
         }
         animationsDisabled = true
+        unitTests.returnDefaultValues = true
     }
 }
 
