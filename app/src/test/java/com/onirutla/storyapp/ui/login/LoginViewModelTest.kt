@@ -3,6 +3,7 @@ package com.onirutla.storyapp.ui.login
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.onirutla.storyapp.MainCoroutineRule
 import com.onirutla.storyapp.data.model.user.body.UserLoginBody
+import com.onirutla.storyapp.data.model.user.response.LoginData
 import com.onirutla.storyapp.data.model.user.response.LoginResponse
 import com.onirutla.storyapp.data.source.repository.user.UserRepository
 import getOrAwaitValue
@@ -38,9 +39,9 @@ class LoginViewModelTest {
     }
 
     @Test
-    fun test() = mainCoroutineRule.runBlockingTest {
+    fun `given user login body should return LoginResponse`() = mainCoroutineRule.runBlockingTest {
         val loginBody = UserLoginBody()
-        val expected = LoginResponse()
+        val expected = LoginResponse(loginData = LoginData(token = token))
         `when`(userRepository.loginUser(loginBody)).thenReturn(expected)
         `when`(userRepository.userToken).thenReturn(flowOf(token))
 
