@@ -39,10 +39,10 @@ class RegisterViewModelTest {
     }
 
     @Test
-    fun `given empty UserRegisterBody should return BaseResponse(error = false)`() =
+    fun `given UserRegisterBody should BaseResponse`() =
         mainCoroutineRule.runBlockingTest {
             val registerBody = UserRegisterBody()
-            val expected = BaseResponse(error = false)
+            val expected = BaseResponse()
             `when`(userRepository.registerUser(registerBody)).thenReturn(expected)
 
             registerViewModel.register(registerBody)
