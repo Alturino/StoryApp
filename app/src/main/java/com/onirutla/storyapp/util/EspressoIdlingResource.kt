@@ -8,8 +8,8 @@ object EspressoIdlingResource {
     private const val RESOURCE = "GLOBAL"
 
     @VisibleForTesting
-    val countingIdlingResource: CountingIdlingResource
-        get() = CountingIdlingResource(RESOURCE)
+    @JvmField
+    val countingIdlingResource: CountingIdlingResource = CountingIdlingResource(RESOURCE)
 
     fun increment() {
         countingIdlingResource.increment()
