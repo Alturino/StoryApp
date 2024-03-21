@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <paths>
     <external-files-path
-        name="story_images"
+        name="Story App"
+        path="Pictures" />
+    <external-media-path
+        name="Story App"
         path="Pictures" />
 </paths>

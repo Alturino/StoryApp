@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/filter"
+        android:icon="@drawable/baseline_filter_24"
+        android:title="@string/filter"
+        app:showAsAction="ifRoom">
+        <menu>
+            <item
+                android:id="@+id/filter_all"
+                android:title="@string/all" />
+
+            <item
+                android:id="@+id/filter_with_location"
+                android:title="@string/with_location" />
+
+            <item
+                android:id="@+id/filter_without_location"
+                android:title="@string/without_location" />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/sort"
+        android:icon="@drawable/baseline_sort_24"
+        android:title="@string/sort"
+        app:showAsAction="ifRoom">
+        <menu>
+            <item
+                android:id="@+id/sort_name_ascending"
+                android:title="@string/name_ascending" />
+
+
+            <item
+                android:id="@+id/sort_name_descending"
+                android:title="@string/name_descending" />
+
+            <item
+                android:id="@+id/sort_latest"
+                android:title="@string/latest" />
+
+            <item
+                android:id="@+id/sort_earliest"
+                android:title="@string/earliest" />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/story_map"
+        android:icon="@drawable/baseline_map_24"
+        android:title="@string/story_map"
+        app:showAsAction="ifRoom" />
+
+</menu>

@@ -1,0 +1,102 @@
+package com.onirutla.storyapp.story.data.source.remote.api_services
+
+import arrow.core.Either
+import com.onirutla.storyapp.core.source.remote.model.BaseResponse
+import com.onirutla.storyapp.story.data.source.remote.model.request.StoryRequest
+import com.onirutla.storyapp.story.data.source.remote.model.response.StoryResponse
+import io.ktor.client.HttpClient
+import io.ktor.client.call.body
+import io.ktor.client.plugins.onUpload
+import io.ktor.client.request.forms.MultiPartFormDataContent
+import io.ktor.client.request.forms.formData
+import io.ktor.client.request.get
+import io.ktor.client.request.headers
+import io.ktor.client.request.post
+import io.ktor.client.request.setBody
+import io.ktor.http.ContentType
+import io.ktor.http.Headers
+import io.ktor.http.HttpHeaders
+import io.ktor.http.appendPathSegments
+import io.ktor.http.contentType
+import javax.inject.Inject
+import javax.inject.Singleton
+
+@Singleton
+class StoryApiService @Inject constructor(
+    private val ktorClient: HttpClient,
+) {
+
+    suspend fun getStories(
+        page: Int,
+        size: Int,
+        token: String,
+        withLocation: Boolean = false,
+    ): Either<Throwable, BaseResponse<StoryResponse>> {
+        val response = Either.catch {
+            ktorClient.get(urlString = "stories") {
+                url {
+                    parameters.append(name = "page", value = "$page")
+                    parameters.append(name = "size", value = "$size")
+                    parameters.append(name = "location", value = if (withLocation) "1" else "0")
+                }
+                headers {
+                    append(name = HttpHeaders.Authorization, value = "Bearer $token")
+                }
+            }.body<BaseResponse<StoryResponse>>()
+        }
+        return response
+    }
+
+    suspend fun getStoryById(
+        id: String,
+        token: String,
+    ): Either<Throwable, BaseResponse<StoryResponse>> {
+        val response = Either.catch {
+            ktorClient.get(urlString = "stories") {
+                url { appendPathSegments(id) }
+                headers { append(name = HttpHeaders.Authorization, value = "Bearer $token") }
+            }.body<BaseResponse<StoryResponse>>()
+        }
+        return response
+    }
+
+    suspend fun uploadStory(
+        story: StoryRequest,
+        token: String,
+        progress: suspend (sent: Long, length: Long) -> Unit,
+    ): Either<Throwable, BaseResponse<Unit>> {
+        val response = Either.catch {
+            ktorClient.post(urlString = "stories") {
+                contentType(ContentType.MultiPart.FormData)
+                headers {
+                    append(name = HttpHeaders.Authorization, value = "Bearer $token")
+                }
+                setBody(
+                    MultiPartFormDataContent(
+                        formData {
+                            append(key = "description", value = story.description)
+                            append(key = "lat", value = story.lat)
+                            append(key = "lon", value = story.lon)
+                            append(
+                                key = "photo",
+                                value = story.photo.readBytes(),
+                                headers = Headers.build {
+                                    append(
+                                        name = HttpHeaders.ContentType,
+                                        value = ContentType.Image.JPEG.contentType,
+                                    )
+                                    append(
+                                        name = HttpHeaders.ContentDisposition,
+                                        value = "filename=${story.photo.name}"
+                                    )
+                                }
+                            )
+                        }
+                    )
+                )
+                onUpload(progress)
+            }.body<BaseResponse<Unit>>()
+        }
+        return response
+    }
+}

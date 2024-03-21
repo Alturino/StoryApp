@@ -1,0 +1,645 @@
+{
+  "error": false,
+  "message": "Stories fetched successfully",
+  "listStory": [
+    {
+      "id": "story-mj0tZR8cr6beQAKs",
+      "name": "Mutakin",
+      "description": "Tahu tahu apa yang sakit.\nTahu diri. hehe",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1711005534094_af181acad6c806009d53.jpg",
+      "createdAt": "2024-03-21T07:18:54.096Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-VffqfbaErRUgiK-y",
+      "name": "inisaya",
+      "description": "fghd",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1711004301915_044d14ec5f9c341517ba.jpg",
+      "createdAt": "2024-03-21T06:58:21.916Z",
+      "lat": -6.4000983,
+      "lon": 106.971995
+    },
+    {
+      "id": "story-TIq3xwVZUdkXs8Qy",
+      "name": "inisaya",
+      "description": "vkjdsnkvs",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1711004191663_e72b35bddd87e407fad1.jpg",
+      "createdAt": "2024-03-21T06:56:31.666Z",
+      "lat": -6.4000983,
+      "lon": 106.971995
+    },
+    {
+      "id": "story-Dpx7R_8c9cQaVjxi",
+      "name": "inisaya",
+      "description": "apa ya",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1711002771996_2ac7e4d9dbf7b482ce20.jpg",
+      "createdAt": "2024-03-21T06:32:52.002Z",
+      "lat": -6.281194143956719,
+      "lon": 106.71046022325754
+    },
+    {
+      "id": "story-gKu_5Mb0QJYznMrt",
+      "name": "Saya ini Saya 4",
+      "description": "tuhan benarkah kau mendengarku? kemana pergi doa doaku.",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1711002256139_c5b9cc35d660036eb543.jpg",
+      "createdAt": "2024-03-21T06:24:16.142Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-7WbNf1yeHfZ2KFs5",
+      "name": "Saya ini Saya 4",
+      "description": "mentally physically weak",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1711002197655_2390993931751b5c3ee9.jpg",
+      "createdAt": "2024-03-21T06:23:17.658Z",
+      "lat": -6.176717628621461,
+      "lon": 106.8267510831356
+    },
+    {
+      "id": "story-d2pE7sSoGvCv6fNS",
+      "name": "ilham",
+      "description": "maap bang, gak lagi",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1711001026869_4076635369a1dc165974.jpg",
+      "createdAt": "2024-03-21T06:03:46.874Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-vYpTVkIi6Zx9YaY9",
+      "name": "HaloBang",
+      "description": "wah gak ngerti lagi gua bang lu malah pamer cendol",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1711000263446_2fe90a9e88fdd946b27d.jpg",
+      "createdAt": "2024-03-21T05:51:03.449Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-hWcHOev-ypoT5hqt",
+      "name": "double float",
+      "description": "bang? ",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1711000205408_d7adefab9c76b1749466.jpg",
+      "createdAt": "2024-03-21T05:50:05.412Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-yKydDTTBI01h2Eae",
+      "name": "HaloBang",
+      "description": "gila lu bang, pamer cendol gak suka aku bang",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1711000077358_07852ae8f7680a471e76.jpg",
+      "createdAt": "2024-03-21T05:47:57.364Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-7K1DYlxilfiJ6RKz",
+      "name": "HaloBang",
+      "description": "keren banget fah kamu bang",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710999969548_4a6d00ad106f287782e8.jpg",
+      "createdAt": "2024-03-21T05:46:09.554Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-7Ci6f02zhoscobKj",
+      "name": "ilham",
+      "description": "masih kuat belum puasanya?",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710999592731_ac544a06a1783c5b1fe9.jpg",
+      "createdAt": "2024-03-21T05:39:52.739Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-uoTLPKebb-sSVrBE",
+      "name": "ilham",
+      "description": "palong terakhir",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710999420856_cc21ebd396d1030c83c9.jpg",
+      "createdAt": "2024-03-21T05:37:00.866Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-3JDg88D1vWshyohX",
+      "name": "ilham",
+      "description": "percobaan terakhir",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710999366040_d6253599b177ac732a0f.jpg",
+      "createdAt": "2024-03-21T05:36:06.054Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-osPSfnZQ3aPTxCkT",
+      "name": "ilham",
+      "description": "mabar bang",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710999078200_bbc47e821165494fab75.jpg",
+      "createdAt": "2024-03-21T05:31:18.210Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-uf6P45KdV8i7Nm5S",
+      "name": "HaloBang",
+      "description": "gila apa ini bang gak ngerti ak bang",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710998936651_541a05924ef3bc218dcb.jpg",
+      "createdAt": "2024-03-21T05:28:56.653Z",
+      "lat": -2.972972972972973,
+      "lon": 104.71751471973889
+    },
+    {
+      "id": "story-U1eyCq1Omtq7ohP_",
+      "name": "ilham",
+      "description": "mabar bang",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710998900045_038f8bafcf5ab4c42920.jpg",
+      "createdAt": "2024-03-21T05:28:20.060Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-SppB8i-nnPz5zYHk",
+      "name": "ilham",
+      "description": "mabar bang",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710998900037_4901bddc4527217b32bd.jpg",
+      "createdAt": "2024-03-21T05:28:20.053Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-SfvQqYWlFxTVoyAN",
+      "name": "HaloBang",
+      "description": "waduh keren dah bang",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710998801387_be509772cd4b460bd9f9.jpg",
+      "createdAt": "2024-03-21T05:26:41.389Z",
+      "lat": -2.972972972972973,
+      "lon": 104.71751471973889
+    },
+    {
+      "id": "story-wcumS8NWzEMe1DVI",
+      "name": "ilham",
+      "description": "Ini adalah deksripsi gambar",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710998772458_a6132f28737d45c5b8e7.jpg",
+      "createdAt": "2024-03-21T05:26:12.476Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-Bb64d8mW_PQxy-HM",
+      "name": "ilham",
+      "description": "Ini adalah deksripsi gambar",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710998772446_a2841d0246c56f1bcfe7.jpg",
+      "createdAt": "2024-03-21T05:26:12.465Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-20wKuzeLwm3JFf9L",
+      "name": "Saya ini Saya 4",
+      "description": "i fantasize about you everytime, all the time",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710998548123_ccd727596da93453e579.jpg",
+      "createdAt": "2024-03-21T05:22:28.128Z",
+      "lat": -6.1737069855698605,
+      "lon": 106.82311702519655
+    },
+    {
+      "id": "story-RnOMdG9jmGvqI4Qa",
+      "name": "HaloBang",
+      "description": "wah gila lu bang",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710996684313_6ff899e5896f9aa290bc.jpg",
+      "createdAt": "2024-03-21T04:51:24.316Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-d2jJpnLWhPj1ahRe",
+      "name": "HaloBang",
+      "description": "wafuh",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710996486577_ea0ff37127068a316202.jpg",
+      "createdAt": "2024-03-21T04:48:06.580Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-svt3PQ_xKo1B406U",
+      "name": "HaloBang",
+      "description": "wah keren bang",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710996282160_a078eace28190b7997e1.jpg",
+      "createdAt": "2024-03-21T04:44:42.162Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-Zos9QU1FDmSaWC3s",
+      "name": "HaloBang",
+      "description": "udahhhh banggggg",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710995973092_5f5758c6199dc031dd62.jpg",
+      "createdAt": "2024-03-21T04:39:33.094Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-7ZCybXzxdlrCZH9X",
+      "name": "HaloBang",
+      "description": "wih keren banget sih bang",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710995818344_60488c6ac0b5136830f9.jpg",
+      "createdAt": "2024-03-21T04:36:58.346Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-tgDyegsT-Mr0ne_H",
+      "name": "HaloBang",
+      "description": "lu keren banget dah bang",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710995465773_84475ec2dfbbea498fb6.jpg",
+      "createdAt": "2024-03-21T04:31:05.776Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-0mAt3v5DS7Aa3Iyb",
+      "name": "HaloBang",
+      "description": "wah gila lu bang",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710994489809_c5feadc95748b211953a.jpg",
+      "createdAt": "2024-03-21T04:14:49.815Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-6VNxzLHL0HYTQrkt",
+      "name": "HaloBang",
+      "description": "waduhhhh bangh",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710993358335_e89cbb1353d675c0a6d8.jpg",
+      "createdAt": "2024-03-21T03:55:58.343Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-6K0Zw1NaIvXpVrnJ",
+      "name": "reviewer",
+      "description": "test",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710991352695_c1951b83699113229538.jpg",
+      "createdAt": "2024-03-21T03:22:32.698Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-nRBvc6vY817lBWhl",
+      "name": "test123",
+      "description": "coba",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710989428527_583f27635e01f8a4a5ab.png",
+      "createdAt": "2024-03-21T02:50:28.529Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-fGdMpv_pZ2_KVgoV",
+      "name": "Han",
+      "description": "fsaffasdf",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710986842280_aba8c0c3b4651cfb0d28.jpg",
+      "createdAt": "2024-03-21T02:07:22.282Z",
+      "lat": 37.422465491662805,
+      "lon": -122.08561789244413
+    },
+    {
+      "id": "story-w6i5sI5wwdyBj3IM",
+      "name": "todo",
+      "description": "Lokasi null",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710985303321_941a86f67d923ece2093.jpg",
+      "createdAt": "2024-03-21T01:41:43.327Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story--uZmX4l3IK1BSKyJ",
+      "name": "todo",
+      "description": "Lokasi",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710985271926_30a8d46a22091672bda1.jpg",
+      "createdAt": "2024-03-21T01:41:11.931Z",
+      "lat": -6.439665,
+      "lon": 106.8259033
+    },
+    {
+      "id": "story-eIcRsblksOe2fBuJ",
+      "name": "github.com/ExRonin",
+      "description": "Finish",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710984865504_bd42d22c7b522aa1057c.jpg",
+      "createdAt": "2024-03-21T01:34:25.506Z",
+      "lat": 37.4219983,
+      "lon": -122.084
+    },
+    {
+      "id": "story-u7epsmwC34uczjv7",
+      "name": "todo",
+      "description": "Test Lokasi null",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710984756885_59efe899ae4301007868.jpg",
+      "createdAt": "2024-03-21T01:32:36.886Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-kT775Lfj3RJA2ovf",
+      "name": "todo",
+      "description": "Test Lokasi",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710984722646_88d678608c60b8f5739b.jpg",
+      "createdAt": "2024-03-21T01:32:02.650Z",
+      "lat": 37.4220936,
+      "lon": -122.083922
+    },
+    {
+      "id": "story-UsK3WtoKwO_aS6KP",
+      "name": "student89",
+      "description": "tess",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710971189563_f6accfe0997dd5479c43.jpg",
+      "createdAt": "2024-03-20T21:46:29.564Z",
+      "lat": -7.78372,
+      "lon": 110.4036867
+    },
+    {
+      "id": "story-e_yCUFjqeUSydIT6",
+      "name": "Tata Adi Nugroho",
+      "description": "warzone mobile indonesia now available",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710968971656_8cd59f6f7ae685bf8640.jpg",
+      "createdAt": "2024-03-20T21:09:31.658Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story--vV2eEw3vu8ir-pM",
+      "name": "lady gaga",
+      "description": "kucing",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710964522055_01b23599a78161b4705f.jpg",
+      "createdAt": "2024-03-20T19:55:22.056Z",
+      "lat": -6.2519767,
+      "lon": 106.8333683
+    },
+    {
+      "id": "story-nQTbOpppy7TDFxkD",
+      "name": "lady gaga",
+      "description": "kucing",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710964471261_dd6fcc0f75292f4c2a80.jpg",
+      "createdAt": "2024-03-20T19:54:31.263Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-wz4T5ZHLQRjYxJFm",
+      "name": "lady gaga",
+      "description": "k",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710964377149_7f439abfa515daaacb7d.jpg",
+      "createdAt": "2024-03-20T19:52:57.150Z",
+      "lat": -6.8957473,
+      "lon": 107.6337669
+    },
+    {
+      "id": "story-1wEZPH26YqWX3t8Q",
+      "name": "lady gaga",
+      "description": "wdadawawd",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710964061323_c5086b7f9c47d6f024d8.jpg",
+      "createdAt": "2024-03-20T19:47:41.324Z",
+      "lat": -6.8957473,
+      "lon": 107.6337669
+    },
+    {
+      "id": "story-e8YoIpNM3R5eeP_1",
+      "name": "lady gaga",
+      "description": "kucing",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710963778298_ff4822baa8e5f59a5f97.jpg",
+      "createdAt": "2024-03-20T19:42:58.300Z",
+      "lat": -6.8957473,
+      "lon": 107.6337669
+    },
+    {
+      "id": "story-qVuPDuxmoyMOhOPV",
+      "name": "lady gaga",
+      "description": "test",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710957454403_3e49c6003c5052f34817.jpg",
+      "createdAt": "2024-03-20T17:57:34.405Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-7Y1HVQeYr55alKm2",
+      "name": "test",
+      "description": "testsss",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710956074253_31dc3941861d2ab7fa3d.jpg",
+      "createdAt": "2024-03-20T17:34:34.257Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-zkoWZtlGMpc0kSdf",
+      "name": "Mutakin",
+      "description": "Ini adalah augmented reality",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710950586031_ca64a0290df36a430942.jpg",
+      "createdAt": "2024-03-20T16:03:06.034Z",
+      "lat": 37.422092,
+      "lon": -122.08392
+    },
+    {
+      "id": "story-kZ9hn_tz3OVbH-wt",
+      "name": "asdf",
+      "description": "test ygy",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710948438427_a47227098b85f39e3b12.jpg",
+      "createdAt": "2024-03-20T15:27:18.430Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-lzIUYwC17dtdbwqL",
+      "name": "inisaya",
+      "description": "nyoba lagi",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710946626475_4054b5f751096e41d18c.jpg",
+      "createdAt": "2024-03-20T14:57:06.477Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-PA0Y2nDRGUseqSnm",
+      "name": "Saya ini Saya 4",
+      "description": "we can't be friend",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710945981132_7f1c80edd3d342b11368.jpg",
+      "createdAt": "2024-03-20T14:46:21.139Z",
+      "lat": -6.177603618411681,
+      "lon": 106.82621464133263
+    },
+    {
+      "id": "story-hitYWYxkGLXUqWOL",
+      "name": "hawari",
+      "description": "sekali lagi mungkin",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710945915317_b8b817ab2e82ecd3fe9e.jpg",
+      "createdAt": "2024-03-20T14:45:15.320Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-9iyyyESonnYq-agH",
+      "name": "hawari",
+      "description": "sekali lagi ?",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710945848919_9dec756720ba1f1d01c3.jpg",
+      "createdAt": "2024-03-20T14:44:08.924Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-9SnH-WlwW5yypbRh",
+      "name": "hawari",
+      "description": "lagi",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710945607194_6e01d60f5bf18822e1fc.jpg",
+      "createdAt": "2024-03-20T14:40:07.197Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-Ka06aeLUnS5Xp0Eq",
+      "name": "hawari",
+      "description": "test lagi",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710945463995_791be34ef76da53429bd.jpg",
+      "createdAt": "2024-03-20T14:37:44.000Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-G3Qi278Nko3tJhWx",
+      "name": "hawari",
+      "description": "test",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710945256010_62b7f67462c359911c17.jpg",
+      "createdAt": "2024-03-20T14:34:16.016Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-i9AylvUshqAWubbA",
+      "name": "Saya ini Saya 4",
+      "description": "takut banget sama devin AI",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710943712277_c57b491327278bb83cb3.jpg",
+      "createdAt": "2024-03-20T14:08:32.280Z",
+      "lat": -6.173350987230738,
+      "lon": 106.8270605430007
+    },
+    {
+      "id": "story-CbwVgCv_OifUtjyN",
+      "name": "Saya ini Saya 4",
+      "description": "marhaban ya syahru romadhon ya sya",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710943583545_dc9b24786599522137a6.jpg",
+      "createdAt": "2024-03-20T14:06:23.548Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-ldgkETTtT4ZNm3AJ",
+      "name": "Tata Adi Nugroho",
+      "description": "izin post sepuh",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1710941828578_311575b897e5a4c76c68.jpg",
+      "createdAt": "2024-03-20T13:37:08.580Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-5aju5ku5S4J1nkUW",
+      "name": "Dicoding",
+      "description": "If our economic condition is difficult, it is normal to feel shy or minder. But don’t stop just right there. Find opportunities and prepare yourselves to grasp them. Keep going forward and never give up.",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1701942477814_u75S9zie.webp",
+      "createdAt": "2023-12-07T09:47:57.816Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-Tt0pNLQumHR9H85Q",
+      "name": "Dicoding",
+      "description": "If our economic condition is difficult, it is normal to feel shy or minder. But don’t stop just right there. Find opportunities and prepare yourselves to grasp them. Keep going forward and never give up.",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1701941792018_Zu0rAhVU.webp",
+      "createdAt": "2023-12-07T09:36:32.021Z",
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": "story-ifmCTI4ZAdBFTrRr",
+      "name": "Dicoding",
+      "description": "If our economic condition is difficult, it is normal to feel shy or minder. But don’t stop just right there. Find opportunities and prepare yourselves to grasp them. Keep going forward and never give up.",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1687836092790_A_UcH6BZ.jpg",
+      "createdAt": "2023-06-27T03:21:32.792Z",
+      "lat": -4.8514038,
+      "lon": 127.6743234
+    },
+    {
+      "id": "story-Ef7Ih90hOiA5EClr",
+      "name": "Dicoding",
+      "description": "Don’t give up! Jangan menyerah dan tetap terus belajar dan berusaha. Jangan berpaku dengan kondisi disabilitas. Berkonsentrasi dengan peluang dan kelebihan itu adalah sebuah keharusan. Allah tidak akan mengubah nasib suatu kaum bilamana kaum tersebut tidak berusaha mengubahnya. Bahkan Rasulullah lebih menyukai orang yang bekerja keras dan tidak berpangku tangan. Jadi niatkan semua karena ibadah.",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1687836004165_c999T3Gc.jpg",
+      "createdAt": "2023-06-27T03:20:04.169Z",
+      "lat": -8.500314,
+      "lon": 140.365956
+    },
+    {
+      "id": "story-JpTtDha5AxTFJT9q",
+      "name": "Dicoding",
+      "description": "1. Miliki Motivasi yang Tinggi 2. Bersikap Persisten saat dalam Berlatih dan Menghadapi Tantangan 3. Selalu Percaya Diri dan Mencari Apa Passion Kita",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1687835950650_XvmTvFBv.jpg",
+      "createdAt": "2023-06-27T03:19:10.651Z",
+      "lat": -8.8540315,
+      "lon": 121.6438983
+    },
+    {
+      "id": "story-udCROx4nseim_NPM",
+      "name": "Dicoding",
+      "description": "Bangkit adalah kesempatan luar biasa. Semua yang saya butuhkan untuk modal saya terjun ke dunia profesional, diberikan oleh Bangkit. Saya tidak hanya belajar soal IT. Di sini saya mampu melatih soft skill dan mendapatkan ruang yang cukup untuk berkolaborasi.",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1687835898109_fthlWLBp.jpg",
+      "createdAt": "2023-06-27T03:18:18.111Z",
+      "lat": -8.5876608,
+      "lon": 116.0959938
+    },
+    {
+      "id": "story-nNGqhWKAdLvU-GYd",
+      "name": "Dicoding",
+      "description": "Sebagai pendidik sejak 2013,  saya ingin memotivasi mahasiswa agar cinta programming. Caranya, ya dengan menunjukkan saya programmer yang kapabel.",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1687835837847_AeuwHBJl.png",
+      "createdAt": "2023-06-27T03:17:17.848Z",
+      "lat": -5.1113133,
+      "lon": 119.3202264
+    },
+    {
+      "id": "story-k_APX30OqGpcy1TG",
+      "name": "Dicoding",
+      "description": "Di tempat saya kerja sekarang pada saat itu memang sedang transisi ke penggunaan bahasa pemrograman Kotlin. Ternyata di saat bersamaan kelas Dicoding membahas Kotlin, jadi saya bisa langsung praktek. Materi yang diberikan oleh beasiswa Baparekraf dan Dicoding memang sesuai dengan kebutuhan industri.",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1687835748082_eBPHUFTZ.jpg",
+      "createdAt": "2023-06-27T03:15:48.084Z",
+      "lat": -1.1744302,
+      "lon": 116.7593468
+    },
+    {
+      "id": "story-M7ieOA-zkZBDP6UC",
+      "name": "Dicoding",
+      "description": "Dampak dari beasiswa ini adalah, kualitas kode saya menjadi lebih bagus, ilmu yang didapat bisa langsung diimplementasikan di proses produksi.",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1687835672101_7Qn7QPsP.jpg",
+      "createdAt": "2023-06-27T03:14:32.106Z",
+      "lat": -7.2754417,
+      "lon": 112.6302826
+    },
+    {
+      "id": "story-aK6FDM-OL9VbQVo9",
+      "name": "Dicoding",
+      "description": "Pengalaman belajar di Dicoding waktu itu sangat mengesankan. Materinya relevan karena Dicoding adalah  Google Authorized Training Partner. Semua modulnya telah diverifikasi langsung oleh Google. Apalagi, penyampaian materi juga luwes dalam bahasa Indonesia.",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1687835610920_GBYv03RV.png",
+      "createdAt": "2023-06-27T03:13:30.924Z",
+      "lat": -6.9033625,
+      "lon": 107.6019579
+    },
+    {
+      "id": "story-qomHLnFt9gLuoqje",
+      "name": "Dicoding",
+      "description": "Kalau saja saya tidak mencantumkan sertifikat kompetensi dari Dicoding, mungkin hasilnya zonk. Habisnya, pengalaman kerja 5 tahun lalu gak relevan sama sekali dengan Web Developer.",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1687835528128_HkARfnci.jpg",
+      "createdAt": "2023-06-27T03:12:08.132Z",
+      "lat": -2.9547941,
+      "lon": 104.6805634
+    },
+    {
+      "id": "story-s0_nR2HyTAv2e_da",
+      "name": "Dicoding",
+      "description": "Saat saya terlena menikmati zona nyaman, junior saya saja, sudah melesat, berlari dengan kencang meninggalkan saya. Saya mempertanyakan dan meragukan diri sendiri:  apakah kompetensi saya hari ini akan terus relevan? Di situ saya sadar kalau saya harus berubah. Harus menguasai keahlian baru.",
+      "photoUrl": "https://story-api.dicoding.dev/images/stories/photos-1687835083212_eMsru_gT.jpg",
+      "createdAt": "2023-06-27T03:04:43.214Z",
+      "lat": 5.54829,
+      "lon": 95.323753
+    }
+  ]
+}

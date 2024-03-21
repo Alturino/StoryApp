@@ -1,0 +1,138 @@
+[versions]
+activity = "1.8.2"
+agp = "8.3.0"
+androidxCoreKtx = "1.5.0"
+androidxTruth = "1.5.0"
+appcompat = "1.6.1"
+arrow = "1.2.3"
+coil = "2.6.0"
+constraintlayout = "2.1.4"
+coordinatorlayout = "1.2.0"
+coreKtx = "1.12.0"
+coreSplashscreen = "1.0.1"
+daggerHilt = "2.51"
+datastore = "1.0.0"
+desugarJdkLibs = "2.0.4"
+espressoCore = "3.5.1"
+fragment = "1.6.2"
+googleMapPlatformSecret = "2.0.1"
+hiltAndroid = "1.2.0"
+junit = "4.13.2"
+junitVersion = "1.1.5"
+kotlin = "1.9.22"
+kotlinxSerializationJson = "1.6.3"
+ksp = "1.9.22-1.0.17"
+ktorClient = "2.3.9"
+lifecycle = "2.7.0"
+mapsKtx = "5.0.0"
+material = "1.11.0"
+navigation = "2.7.7"
+okhttp = "4.12.0"
+paging = "3.2.1"
+playServicesLocation = "21.2.0"
+playServicesMaps = "18.2.0"
+protobuf = "3.25.3"
+protobufGradlePlugin = "0.9.4"
+room = "2.6.1"
+rules = "1.5.0"
+runner = "1.5.2"
+startupRuntime = "1.1.1"
+timber = "5.0.1"
+transition = "1.4.1"
+truth = "1.4.2"
+uiautomator = "2.3.0"
+work = "2.9.0"
+
+[libraries]
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activity" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+androidx-coordinatorlayout = { module = "androidx.coordinatorlayout:coordinatorlayout", version.ref = "coordinatorlayout" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-core-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "coreSplashscreen" }
+androidx-datastore = { module = "androidx.datastore:datastore", version.ref = "datastore" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "fragment" }
+androidx-fragment-testing = { module = "androidx.fragment:fragment-testing", version.ref = "fragment" }
+androidx-hilt-common = { module = "androidx.hilt:hilt-common", version.ref = "hiltAndroid" }
+androidx-hilt-compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "hiltAndroid" }
+androidx-hilt-navigation = { module = "androidx.hilt:hilt-navigation", version.ref = "hiltAndroid" }
+androidx-hilt-navigation-fragment = { module = "androidx.hilt:hilt-navigation-fragment", version.ref = "hiltAndroid" }
+androidx-hilt-work = { module = "androidx.hilt:hilt-work", version.ref = "hiltAndroid" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-junit-ktx = { module = "androidx.test.ext:junit-ktx", version.ref = "junitVersion" }
+androidx-lifecycle-livedata-ktx = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "lifecycle" }
+androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle" }
+androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigation" }
+androidx-navigation-runtime-ktx = { module = "androidx.navigation:navigation-runtime-ktx", version.ref = "navigation" }
+androidx-navigation-testing = { module = "androidx.navigation:navigation-testing", version.ref = "navigation" }
+androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigation" }
+androidx-paging-common-ktx = { module = "androidx.paging:paging-common-ktx", version.ref = "paging" }
+androidx-paging-runtime-ktx = { module = "androidx.paging:paging-runtime-ktx", version.ref = "paging" }
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
+androidx-room-compiler-processing-testing = { module = "androidx.room:room-compiler-processing-testing", version.ref = "room" }
+androidx-room-gradle-plugin = { module = "androidx.room:androidx.room.gradle.plugin", version.ref = "room" }
+androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
+androidx-room-paging = { module = "androidx.room:room-paging", version.ref = "room" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
+androidx-room-testing = { module = "androidx.room:room-testing", version.ref = "room" }
+androidx-test-runner = { module = "androidx.test:runner", version.ref = "runner" }
+androidx-startup-runtime = { module = "androidx.startup:startup-runtime", version.ref = "startupRuntime" }
+androidx-test-core-ktx = { module = "androidx.test:core-ktx", version.ref = "androidxCoreKtx" }
+androidx-test-extension-truth = { module = "androidx.test.ext:truth", version.ref = "androidxTruth" }
+androidx-test-rules = { module = "androidx.test:rules", version.ref = "rules" }
+androidx-transition-ktx = { module = "androidx.transition:transition-ktx", version.ref = "transition" }
+androidx-uiautomator = { module = "androidx.test.uiautomator:uiautomator", version.ref = "uiautomator" }
+androidx-work-multiprocess = { module = "androidx.work:work-multiprocess", version.ref = "work" }
+androidx-work-runtime-ktx = { module = "androidx.work:work-runtime-ktx", version.ref = "work" }
+androidx-work-testing = { module = "androidx.work:work-testing", version.ref = "work" }
+arrow-core = { module = "io.arrow-kt:arrow-core", version.ref = "arrow" }
+arrow-fx-coroutines = { module = "io.arrow-kt:arrow-fx-coroutines", version.ref = "arrow" }
+coil-base = { module = "io.coil-kt:coil" }
+coil-bom = { module = "io.coil-kt:coil-bom", version.ref = "coil" }
+coil-gif = { module = "io.coil-kt:coil-gif" }
+coil-svg = { module = "io.coil-kt:coil-svg" }
+coil-video = { module = "io.coil-kt:coil-video" }
+com-google-truth = { module = "com.google.truth:truth", version.ref = "truth" }
+dagger-hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "daggerHilt" }
+desugar-jdk-libs = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugarJdkLibs" }
+ext-junit-ktx = { module = "androidx.test.ext:junit-ktx", version.ref = "junitVersion" }
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "daggerHilt" }
+hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "daggerHilt" }
+hilt-android-testing = { module = "com.google.dagger:hilt-android-testing", version.ref = "daggerHilt" }
+hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "daggerHilt" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
+ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktorClient" }
+ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktorClient" }
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktorClient" }
+ktor-client-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktorClient" }
+ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktorClient" }
+ktor-client-resources = { module = "io.ktor:ktor-client-resources", version.ref = "ktorClient" }
+ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktorClient" }
+maps-ktx = { module = "com.google.maps.android:maps-ktx", version.ref = "mapsKtx" }
+maps-utils-ktx = { module = "com.google.maps.android:maps-utils-ktx", version.ref = "mapsKtx" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
+okhttp-bom = { module = "com.squareup.okhttp3:okhttp-bom", version.ref = "okhttp" }
+okhttp-loggin-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp" }
+okhttp-mockwebserver = { module = "com.squareup.okhttp3:mockwebserver", version.ref = "okhttp" }
+play-services-location = { module = "com.google.android.gms:play-services-location", version.ref = "playServicesLocation" }
+play-services-maps = { module = "com.google.android.gms:play-services-maps", version.ref = "playServicesMaps" }
+protobuf-javalite = { module = "com.google.protobuf:protobuf-javalite", version.ref = "protobuf" }
+protobuf-kotlinlite = { module = "com.google.protobuf:protobuf-kotlin-lite", version.ref = "protobuf" }
+protoc = { module = "com.google.protobuf:protoc", version.ref = "protobuf" }
+timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
+
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+androidRoom = { id = "androidx.room", version.ref = "room" }
+googleDaggerHiltAndroid = { id = "com.google.dagger.hilt.android", version.ref = "daggerHilt" }
+googleDevtoolsKsp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+googleMapPlatformSecret = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "googleMapPlatformSecret" }
+googleProtobuf = { id = "com.google.protobuf", version.ref = "protobufGradlePlugin" }
+jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+jetbrainsKotlinPluginSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+navigationSafeArgs = { id = "androidx.navigation.safeargs", version.ref = "navigation" }
