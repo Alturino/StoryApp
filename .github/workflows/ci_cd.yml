@@ -31,7 +31,7 @@ jobs:
       - name: setup local.properties
         env:
           MAPS_API_KEY: ${{secrets.MAPS_API_KEY}}
-        run: echo MAPS_API_KEY="$MAPS_MAPS_API_KEY" > ./local.properties
+        run: echo MAPS_API_KEY="$MAPS_API_KEY" > ./local.properties
 
       - name: Run Test
         run: |
