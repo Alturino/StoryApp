@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ MIT License
   ~
   ~ Copyright (c) 2023 Ricky Alturino
@@ -26,8 +25,32 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/story_nav"
+    android:id="@+id/main_nav"
     app:startDestination="@id/fragment_story_list">
+
+    <fragment
+        android:id="@+id/fragment_login"
+        android:name="com.onirutla.storyapp.auth.ui.login.LoginFragment"
+        android:label="@string/login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_fragment_login_to_fragment_register"
+            app:destination="@id/fragment_register"
+            app:launchSingleTop="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_register"
+        android:name="com.onirutla.storyapp.auth.ui.register.RegisterFragment"
+        android:label="@string/register"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_fragment_register_to_fragment_login"
+            app:destination="@id/fragment_login"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/fragment_register"
+            app:popUpToInclusive="true" />
+    </fragment>
 
     <fragment
         android:id="@+id/fragment_story_list"
@@ -38,6 +61,11 @@
             android:id="@+id/action_fragment_story_list_to_fragment_add_story"
             app:destination="@id/fragment_add_story"
             app:launchSingleTop="true" />
+        <action
+            android:id="@+id/action_fragment_story_list_to_fragment_login"
+            app:destination="@id/fragment_login"
+            app:popUpTo="@id/fragment_story_list"
+            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment
@@ -45,5 +73,17 @@
         android:name="com.onirutla.storyapp.story.ui.add_story.AddStoryFragment"
         android:label="@string/add_story"
         tools:layout="@layout/fragment_add_story" />
+
+    <action
+        android:id="@+id/action_global_fragment_story_list"
+        app:destination="@id/fragment_story_list"
+        app:popUpTo="@navigation/main_nav"
+        app:popUpToInclusive="true" />
+
+    <action
+        android:id="@+id/action_global_fragment_login"
+        app:destination="@id/fragment_login"
+        app:popUpTo="@navigation/main_nav"
+        app:popUpToInclusive="true" />
 
 </navigation>

@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><!--
+<?xml version="1.0" encoding="utf-8"?>
+<!--
   ~ MIT License
   ~
   ~ Copyright (c) 2023 Ricky Alturino
@@ -22,34 +23,21 @@
   ~ SOFTWARE.
   -->
 
-<navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/auth_nav"
-    app:startDestination="@id/fragment_login">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_story"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".story.ui.MainActivity">
 
-    <fragment
-        android:id="@+id/fragment_login"
-        android:name="com.onirutla.storyapp.auth.ui.login.LoginFragment"
-        android:label="@string/login"
-        tools:layout="@layout/fragment_login">
-        <action
-            android:id="@+id/action_fragment_login_to_fragment_register"
-            app:destination="@id/fragment_register"
-            app:launchSingleTop="true" />
-    </fragment>
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/main_nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        app:navGraph="@navigation/main_nav" />
 
-    <fragment
-        android:id="@+id/fragment_register"
-        android:name="com.onirutla.storyapp.auth.ui.register.RegisterFragment"
-        android:label="@string/register"
-        tools:layout="@layout/fragment_register">
-        <action
-            android:id="@+id/action_fragment_register_to_fragment_login"
-            app:destination="@id/fragment_login"
-            app:launchSingleTop="true"
-            app:popUpTo="@id/fragment_register"
-            app:popUpToInclusive="true" />
-    </fragment>
-
-</navigation>
+</LinearLayout>

@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-package com.onirutla.storyapp.splash_screen
+package com.onirutla.storyapp.auth.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -41,7 +41,7 @@ import timber.log.Timber
 import javax.inject.Inject
 
 @HiltViewModel
-class SplashScreenViewModel @Inject constructor(
+class AuthViewModel @Inject constructor(
     private val userSessionManager: UserSessionManager,
     private val storyRepository: StoryRepository,
 ) : ViewModel() {

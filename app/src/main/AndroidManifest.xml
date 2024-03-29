@@ -57,27 +57,18 @@
             android:finishOnTaskLaunch="true"
             android:label="@string/title_activity_story_map"
             android:launchMode="singleInstance" />
+
         <activity
-            android:name=".splash_screen.SplashScreenActivity"
-            android:clearTaskOnLaunch="true"
+            android:name=".story.ui.MainActivity"
             android:exported="true"
-            android:finishOnTaskLaunch="true"
-            android:launchMode="singleInstance"
-            android:theme="@style/Theme.StoryApp.SplashScreen">
+            android:launchMode="singleTop">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".auth.ui.AuthActivity"
-            android:exported="false"
-            android:launchMode="singleInstance" />
-        <activity
-            android:name=".story.ui.StoryActivity"
-            android:exported="false"
-            android:launchMode="singleInstance" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"

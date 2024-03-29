@@ -48,7 +48,7 @@ import com.onirutla.storyapp.core.util.NotificationConstant
 import com.onirutla.storyapp.core.util.orZero
 import com.onirutla.storyapp.story.data.source.remote.model.request.StoryRequest
 import com.onirutla.storyapp.story.domain.repository.StoryRepository
-import com.onirutla.storyapp.story.ui.StoryActivity
+import com.onirutla.storyapp.story.ui.MainActivity
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedInject
 import kotlinx.coroutines.delay
@@ -92,7 +92,7 @@ class StoryUploadWorker @AssistedInject constructor(
         }
         val token = userSessionManager.getUserSession()?.token.orEmpty()
 
-        val contentIntent = Intent(context, StoryActivity::class.java)
+        val contentIntent = Intent(context, MainActivity::class.java)
         val pendingIntent = PendingIntent.getActivity(
             context,
             NotificationConstant.UPLOAD_NOTIFICATION_ID,
