@@ -25,12 +25,10 @@
 package com.onirutla.storyapp.story.ui
 
 import android.Manifest
-import android.os.Build
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.ViewCompat
@@ -41,7 +39,6 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
-import com.onirutla.storyapp.MainNavDirections
 import com.onirutla.storyapp.R
 import com.onirutla.storyapp.auth.ui.AuthViewModel
 import com.onirutla.storyapp.core.util.isOnline
@@ -84,12 +81,6 @@ class MainActivity : AppCompatActivity() {
             .onEach { isLogin ->
                 if (isLogin != null) {
                     splashScreen.setKeepOnScreenCondition { false }
-                }
-            }
-            .flowWithLifecycle(lifecycle, Lifecycle.State.RESUMED)
-            .onEach { isLogin ->
-                if (isLogin == false) {
-                    navController.navigate(MainNavDirections.actionGlobalFragmentLogin())
                 }
             }
             .launchIn(lifecycleScope)

@@ -40,17 +40,18 @@ import com.onirutla.storyapp.core.ui.util.asFlow
 import com.onirutla.storyapp.databinding.FragmentLoginBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onEach
 import timber.log.Timber
 
 @AndroidEntryPoint
 class LoginFragment : Fragment() {
 
-    private val vm: LoginViewModel by viewModels()
-
     private var _binding: FragmentLoginBinding? = null
     private val binding: FragmentLoginBinding
         get() = _binding!!
+
+    private val vm: LoginViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -86,9 +87,11 @@ class LoginFragment : Fragment() {
 
         vm.state.flowWithLifecycle(lifecycle, Lifecycle.State.RESUMED)
             .onEach { Timber.d("$it") }
+            .map { it.loginState }
+            .onEach { Timber.d("$it") }
             .onEach { state ->
-                state.loginState.onSuccess {
-                    findNavController().navigate(LoginFragmentDirections.actionGlobalFragmentStoryList())
+                state.onSuccess {
+                    findNavController().navigate(LoginFragmentDirections.actionFragmentLoginToFragmentStoryList())
                 }.onError {
                     Snackbar.make(
                         requireView(),

@@ -36,6 +36,7 @@ import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.onirutla.storyapp.R
+import com.onirutla.storyapp.auth.ui.AuthViewModel
 import com.onirutla.storyapp.core.util.isOnline
 import com.onirutla.storyapp.databinding.FragmentStoryListBinding
 import com.onirutla.storyapp.story.domain.data.StoryFilterType
@@ -55,6 +56,7 @@ class StoryListFragment : Fragment() {
         get() = _binding!!
 
     private val vm: StoryListViewModel by viewModels()
+    private val authVm: AuthViewModel by viewModels()
 
     private val pagingAdapter = StoryPagingAdapter {}
 
@@ -69,6 +71,13 @@ class StoryListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        authVm.isLogin.flowWithLifecycle(viewLifecycleOwner.lifecycle)
+            .onEach {
+                if (it == false) {
+                    findNavController().navigate(StoryListFragmentDirections.actionFragmentStoryListToFragmentLogin())
+                }
+            }
+            .launchIn(viewLifecycleOwner.lifecycleScope)
         binding.apply {
             toolbar.apply {
                 inflateMenu(R.menu.story_list_menu)

@@ -37,6 +37,11 @@
             android:id="@+id/action_fragment_login_to_fragment_register"
             app:destination="@id/fragment_register"
             app:launchSingleTop="true" />
+        <action
+            android:id="@+id/action_fragment_login_to_fragment_story_list"
+            app:destination="@id/fragment_story_list"
+            app:popUpTo="@id/fragment_login"
+            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment
@@ -73,17 +78,5 @@
         android:name="com.onirutla.storyapp.story.ui.add_story.AddStoryFragment"
         android:label="@string/add_story"
         tools:layout="@layout/fragment_add_story" />
-
-    <action
-        android:id="@+id/action_global_fragment_story_list"
-        app:destination="@id/fragment_story_list"
-        app:popUpTo="@navigation/main_nav"
-        app:popUpToInclusive="true" />
-
-    <action
-        android:id="@+id/action_global_fragment_login"
-        app:destination="@id/fragment_login"
-        app:popUpTo="@navigation/main_nav"
-        app:popUpToInclusive="true" />
 
 </navigation>
